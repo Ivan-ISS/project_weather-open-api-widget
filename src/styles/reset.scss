@@ -39,12 +39,12 @@ h6 {
 html,
 body {
     height: 100%;
-    font-family: "Nunito";
-    /* color: $baseBlack;
-    font-size: $baseFontSize; */
+    font-family: "Montserrat";
+    color: $baseBlack;
+    font-size: $baseFontSize;
     font-weight: 400;
     line-height: normal;
-    /* background: $baseBrandLight3; */
+    background: $baseBrandLight3;
 }
 
 #root {
@@ -56,6 +56,6 @@ body {
 @media (max-width: 767px) {
 
     body {
-        /* font-size: $mobileFontSize; */
+        font-size: $mobileFontSize;
     }
 }
