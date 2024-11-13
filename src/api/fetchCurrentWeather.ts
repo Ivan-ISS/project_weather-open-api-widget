@@ -10,9 +10,9 @@ async function fetchCurrentWeather(args: IFetchData) {
     const response = await fetch(
         `${routes.urlCurrentWeather()}?${getQueryParams({ lat: args.lat, lon: args.lon, appid: API_KEY })}`
     );
-    const dataRes = await response.json();
+    const data = await response.json();
 
-    return dataRes;
+    return data;
 }
 
 export { fetchCurrentWeather };
