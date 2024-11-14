@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchCurrentWeather } from './api/fetchCurrentWeather';
 import { fetchForecastFiveWeather } from './api/fetchForecastFiveWeather';
+import { Layout } from './components/Layout';
 
 function App() {
     const [currentWeather, setCurrentWeather] = useState();
@@ -22,11 +23,7 @@ function App() {
         console.log('forecast: ', forecastFiveWeather);
     }, [currentWeather, forecastFiveWeather]);
 
-    return (
-        <>
-            <h1>{'Hi'}</h1>
-        </>
-    );
+    return <Layout />;
 }
 
 export default App;
