@@ -2,11 +2,23 @@ import styles from './layout.module.scss';
 import { FC } from 'react';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
+import { Logo } from '../Common/Logo';
 
-const Layout: FC = (): JSX.Element => {
+interface ILayoutProps {
+    getGeolocation: () => void;
+}
+
+const Layout: FC<ILayoutProps> = ({ getGeolocation }): JSX.Element => {
+    const hendlerClick = () => {
+        getGeolocation();
+    };
+
     return (
         <div className={styles.layout}>
-            <Header>{'Header'}</Header>
+            <Header>
+                <Logo />
+                <button onClick={hendlerClick}>Клик</button>
+            </Header>
             <main className={styles.main}>
                 <div
                     className={`

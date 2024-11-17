@@ -1,0 +1,30 @@
+@import "/src/styles/_colors";
+@import "/src/styles/_variables";
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    .imgContainer {
+        width: 90px;
+        height: 60px;
+    }
+
+    .text {
+        text-transform: uppercase;
+        font-weight: 900;
+        color: $baseBlue;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .logo {
+
+        .imgContainer {
+            width: 90px;
+            height: 60px;
+        }
+    }
+}

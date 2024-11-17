@@ -7,12 +7,22 @@ export interface IFetchData {
 }
 
 async function fetchCurrentWeather(args: IFetchData) {
-    const response = await fetch(
-        `${routes.urlCurrentWeather()}?${getQueryParams({ lat: args.lat, lon: args.lon, appid: API_KEY })}`
-    );
-    const data = await response.json();
+    try {
+        const response = await fetch(
+            `${routes.urlCurrentWeather()}?${getQueryParams({ lat: args.lat, lon: args.lon, appid: API_KEY })}`
+        );
 
-    return data;
+        if (!response.ok) {
+            const error = await response.json();
+            console.log('Ошибка ответа (статус не 200): ', error);
+        }
+
+        const data = await response.json();
+
+        return data;
+    } catch (error) {
+        console.log('Сервер не отвечает: ', error);
+    }
 }
 
 export { fetchCurrentWeather };
