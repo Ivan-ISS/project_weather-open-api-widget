@@ -8,6 +8,7 @@ const useGeolocation = ({ setLatitude, setLongitude, setGeoStatus }: IUseGeoloca
     const success = (position: GeolocationPosition) => {
         setLatitude(position.coords.latitude);
         setLongitude(position.coords.longitude);
+        setGeoStatus('Местоположение определено');
     };
 
     const error = () => {
@@ -18,7 +19,6 @@ const useGeolocation = ({ setLatitude, setLongitude, setGeoStatus }: IUseGeoloca
         if (!navigator.geolocation) {
             setGeoStatus('Geolocation не поддерживается вашим браузером');
         } else {
-            setGeoStatus('Идет определение местоположения');
             navigator.geolocation.getCurrentPosition(success, error);
         }
     };
