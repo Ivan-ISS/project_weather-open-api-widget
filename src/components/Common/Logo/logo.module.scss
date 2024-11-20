@@ -23,8 +23,10 @@
     .logo {
 
         .imgContainer {
-            width: 90px;
-            height: 60px;
+            width: 75px;
+            height: 50px;
+            min-width: 75px;
+            min-height: 50px;
         }
     }
 }

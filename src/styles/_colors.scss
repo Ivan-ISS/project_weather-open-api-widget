@@ -1,13 +1,53 @@
 $baseBlack: #0D1117;
-$baseBlackLight1: #383838;
-
 $baseWhite: #fff;
 
 $baseGray: #4F4F4F;
-$baseGrayDark1: #1e1e1e;
-$baseGrayDark2: #2E3035;
 $baseGrayLight1: #939CB0;
 $baseGrayLight2: #D9D9D9;
 
 $baseBlue: #4793FF;
 $baseBlueLight: rgb(71, 147, 255, 0.2);
+
+
+
+$bodyBackgroundDark: #1e1e1e;
+$bodyBackgroundLight: $baseWhite;
+
+$componentBackgroundDark: #444444;
+$componentBackgroundLight: $baseWhite;
+
+$cardBackgroundDark: #2E3035;
+$cardBackgroundLight: rgb(71, 147, 255, 0.2);
+
+$shadowDark: 10px 10px 4px 0 $baseBlack;
+$shadowLight: 10px 10px 4px 0 rgba($baseBlack, 0.5);
+
+$textColorDark: $baseWhite;
+$textColorLight: #0D1117;
+
+:root {
+    // bodyBackground
+    --bodyBackgroundDark: #{$bodyBackgroundDark};
+    --bodyBackgroundLight: #{$bodyBackgroundLight};
+    --bodyBackgroundDefault: var(#{--bodyBackgroundLight});
+
+    // componentsBackground
+    --componentBackgroundDark: #{$componentBackgroundDark};
+    --componentBackgroundLight: #{$componentBackgroundLight};
+    --componentBackgroundDefault: var(#{--componentBackgroundLight});
+
+    // cardBackground
+    --cardBackgroundDark: #{$cardBackgroundDark};
+    --cardBackgroundLight: #{$cardBackgroundLight};
+    --cardBackgroundDefault: var(#{--cardBackgroundLight});
+
+    // shadow
+    --shadowDark: #{$shadowDark};
+    --shadowLight: #{$shadowLight};
+    --shadowDefault: var(#{--shadowLight});
+
+    // text
+    --textColorDark: #{$textColorDark};
+    --textColorLight: #{$textColorLight};
+    --textColorDefault: var(#{--textColorLight});
+}
