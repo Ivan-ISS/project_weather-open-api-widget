@@ -5,14 +5,27 @@ $boxShadowSmallEl: 0px 0px 5px rgba($baseBlack, 0.4);
 
 $transitionHover: 0.3s ease;
 
-$baseFontSize: 16px;
-$mobileFontSize: 14px;
+$fontSizeLargeDesktop: 36px;
+$fontSizeMediumDesktop: 24px;
+$fontSizeSmallDesktop: 18px;
+$fontSizeLargeMobile: 28px;
+$fontSizeMediumMobile: 18px;
+$fontSizeSmallMobile: 14px;
+
+$baseFontSizeDesktop: 16px;
+$baseFontSizeMobile: 14px;
+
+$borderRadiusLarge: 20px;
+$borderRadiusMedium: 12px;
+$borderRadiusSmall: 8px;
+
+$boxShadow: 10px 10px 4px 0 rgba($baseBlack, 0.5);
 
 $textShadow: 
-    0.2px 0.2px 1.5px rgba(0, 0, 0, 0.355),
-    -0.2px -0.2px 1.5px rgba(0, 0, 0, 0.355),
-    0.2px -0.2px 1.5px rgba(0, 0, 0, 0.355),
-    -0.2px 0.2px 1.5px rgba(0, 0, 0, 0.355);
+    0.2px 0.2px 2.5px rgba($baseBlack, 0.355),
+    -0.2px -0.2px 2.5px rgba($baseBlack, 0.355),
+    0.2px -0.2px 2.5px rgba($baseBlack, 0.355),
+    -0.2px 0.2px 2.5px rgba($baseBlack, 0.355);
 
 $textShadowSlim: 
     0.1px 0.1px 1px rgba($baseBlue, 0.355),

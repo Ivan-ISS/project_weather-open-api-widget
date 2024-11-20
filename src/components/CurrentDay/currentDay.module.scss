@@ -1,0 +1,139 @@
+@import "/src/styles/_colors";
+@import "/src/styles/_variables";
+
+.currentDay {
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    border: 2px solid rgba($baseBlack, 0.5);
+    border-radius: $borderRadiusLarge;
+    box-shadow: $boxShadow;
+    background: $baseWhite;
+    color: $baseBlack;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    .upperPart {
+        width: fit-content;
+        padding: 8px 16px;
+        background: $baseBlueLight;
+        border-radius: $borderRadiusMedium;
+
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .middlePart {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+
+        .day {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .weekDay {
+                font-size: $fontSizeLargeDesktop;
+            }
+    
+            .date {
+                font-size: $fontSizeSmallDesktop;
+                color: $baseGrayLight1;
+            }
+        }
+
+        .localTime {
+            font-size: $fontSizeLargeDesktop;
+        }
+    }
+
+    .lowerPart {
+        
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+
+        svg {
+            width: 125px;
+            height: 125px;
+            min-width: 90px;
+            min-height: 90px;
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .temp {
+
+                .dayTemp {
+                    text-align: right;
+                    font-size: $fontSizeLargeDesktop;
+                }
+    
+                .nightTemp {
+                    text-align: right;
+                    font-size: $fontSizeMediumDesktop;
+                    color: $baseGrayLight1;
+                }
+            }
+
+            .phenomena {
+                font-size: $fontSizeSmallDesktop;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .currentDay {
+        max-width: 350px;
+    
+        .middlePart {
+    
+            .day {
+    
+                .weekDay {
+                    font-size: $fontSizeLargeMobile;
+                }
+        
+                .date {
+                    font-size: $fontSizeSmallMobile;
+                }
+            }
+    
+            .localTime {
+                font-size: $fontSizeLargeMobile;
+            }
+        }
+    
+        .lowerPart {
+    
+            .description {
+    
+                .temp {
+    
+                    .dayTemp {
+                        font-size: $fontSizeLargeMobile;
+                    }
+        
+                    .nightTemp {
+                        font-size: $fontSizeMediumMobile;
+                    }
+                }
+    
+                .phenomena {
+                    font-size: $fontSizeSmallMobile;
+                }
+            }
+        }
+    }
+}

@@ -41,8 +41,8 @@ body {
     height: 100%;
     font-family: "Montserrat";
     color: $baseBlack;
-    font-size: $baseFontSize;
-    font-weight: 400;
+    font-size: $baseFontSizeDesktop;
+    font-weight: 600;
     line-height: normal;
     background: $baseWhite;
 }
@@ -56,6 +56,6 @@ body {
 @media (max-width: 767px) {
 
     body {
-        font-size: $mobileFontSize;
+        font-size: $baseFontSizeMobile;
     }
 }
