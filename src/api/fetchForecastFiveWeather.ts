@@ -2,14 +2,15 @@ import { routes, API_KEY } from './routes';
 import { getQueryParams } from '../helpers/getQueryParams';
 
 export interface IFetchData {
-    lat: number;
-    lon: number;
+    city?: string;
+    lat?: number;
+    lon?: number;
 }
 
 async function fetchForecastFiveWeather(args: IFetchData) {
     try {
         const response = await fetch(
-            `${routes.urlForecastFiveWeather()}?${getQueryParams({ lat: args.lat, lon: args.lon, appid: API_KEY })}`
+            `${routes.urlForecastFiveWeather()}?${getQueryParams({ city: args.city, lat: args.lat, lon: args.lon, appid: API_KEY })}`
         );
 
         if (!response.ok) {

@@ -14,6 +14,7 @@ function App() {
     const [latitude, setLatitude] = useState<number>(0);
     const [longitude, setLongitude] = useState<number>(0);
     const [geoStatus, setGeoStatus] = useState<string>('');
+    const [displayCity, setDisplayCity] = useState<boolean>(false);
 
     const [getGeolocation] = useGeolocation({
         setLatitude,
@@ -21,9 +22,9 @@ function App() {
         setGeoStatus,
     });
 
-    async function requestWeather(lat: number, lon: number) {
-        const resCurrentWeather = await fetchCurrentWeather({ lat, lon });
-        const resForecastFiveWeather = await fetchForecastFiveWeather({ lat, lon });
+    async function requestWeather(city: string, lat: number, lon: number) {
+        const resCurrentWeather = await fetchCurrentWeather({ city, lat, lon });
+        const resForecastFiveWeather = await fetchForecastFiveWeather({ city, lat, lon });
         setCurrentWeather(resCurrentWeather);
         setForecastFiveWeather(resForecastFiveWeather);
     }
@@ -33,12 +34,9 @@ function App() {
     }, [getGeolocation]);
 
     useEffect(() => {
-        if (latitude && longitude) requestWeather(latitude, longitude);
-    }, [latitude, longitude]);
-
-    useEffect(() => {
-        if (city) console.log(city);
-    }, [city]);
+        if (city) setDisplayCity(true);
+        if (latitude && longitude) requestWeather(city, latitude, longitude);
+    }, [latitude, longitude, city]);
 
     useEffect(() => {
         if (geoStatus) console.log(geoStatus);
@@ -54,7 +52,13 @@ function App() {
         if (forecastFiveWeather) console.log('forecast: ', forecastFiveWeather);
     }, [currentWeather, forecastFiveWeather]);
 
-    return <Layout getGeolocation={getGeolocation} setCity={setCity} />;
+    useEffect(() => {
+        console.log('displayCity: ', displayCity);
+    }, [displayCity]);
+
+    return (
+        <Layout getGeolocation={getGeolocation} setDisplayCity={setDisplayCity} setCity={setCity} />
+    );
 }
 
 export default App;

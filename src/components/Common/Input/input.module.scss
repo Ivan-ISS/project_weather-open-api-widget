@@ -11,6 +11,7 @@
     border-radius: $borderRadiusComEl;
     background: var(#{--componentBackgroundDefault});
     box-shadow: $boxShadowSmallEl;
+    transition: $transitionSwitch;
     
     .btnSearch {
         background: transparent;
@@ -28,6 +29,7 @@
         height: 28px;
         color: var(#{--textColorDefault});
         background: var(#{--componentBackgroundDefault});
+        transition: $transitionSwitch;
 
         &::placeholder {
             color: $baseGrayLight1;

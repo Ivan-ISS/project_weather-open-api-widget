@@ -10,6 +10,7 @@
     box-shadow: var(#{--shadowDefault});;
     background: var(#{--componentBackgroundDefault});
     color: var(#{--textColorDefault});
+    transition: $transitionSwitch;
 
     display: flex;
     flex-direction: column;

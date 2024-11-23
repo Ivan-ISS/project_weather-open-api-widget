@@ -11,10 +11,11 @@ import { CurrentDay } from '../CurrentDay';
 
 interface ILayoutProps {
     getGeolocation: () => void;
+    setDisplayCity: (value: boolean) => void;
     setCity: (value: string) => void;
 }
 
-const Layout: FC<ILayoutProps> = ({ getGeolocation, setCity }): JSX.Element => {
+const Layout: FC<ILayoutProps> = ({ getGeolocation, setCity, setDisplayCity }): JSX.Element => {
     const [theme, setTheme] = useState<string>(themeName.light);
 
     useEffect(() => {
@@ -27,6 +28,7 @@ const Layout: FC<ILayoutProps> = ({ getGeolocation, setCity }): JSX.Element => {
 
     const hendleClick = () => {
         getGeolocation();
+        setDisplayCity(false);
     };
 
     return (
