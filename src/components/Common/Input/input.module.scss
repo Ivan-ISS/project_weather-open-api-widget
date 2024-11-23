@@ -1,0 +1,45 @@
+@import "/src/styles/_colors";
+@import "/src/styles/_variables";
+
+.inputWrap {
+    min-width: 215px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 8px 20px;
+    border-radius: $borderRadiusComEl;
+    background: var(#{--componentBackgroundDefault});
+    box-shadow: $boxShadowSmallEl;
+    
+    .btnSearch {
+        background: transparent;
+        cursor: pointer;
+
+        svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    .input {
+        width: 100%;
+        outline: none;
+        height: 28px;
+        color: var(#{--textColorDefault});
+        background: var(#{--componentBackgroundDefault});
+
+        &::placeholder {
+            color: $baseGrayLight1;
+            font-family: "Montserrat";
+            font-weight: 500;
+        }
+    }
+}
+
+@media (max-width: 560px) {
+
+    .inputWrap {
+
+    }
+}

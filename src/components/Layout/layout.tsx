@@ -1,9 +1,11 @@
 import styles from './layout.module.scss';
 import { FC, useState, useEffect } from 'react';
+import { themeName, placeholders } from '../../data';
 import { setThemeStyleVar } from '../../helpers/setThemeStyleVar';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
 import { Logo } from '../Common/Logo';
+import { Input } from '../Common/Input';
 import { Switch } from '../Common/Switch';
 import { CurrentDay } from '../CurrentDay';
 
@@ -12,14 +14,14 @@ interface ILayoutProps {
 }
 
 const Layout: FC<ILayoutProps> = ({ getGeolocation }): JSX.Element => {
-    const [theme, setTheme] = useState<string>('Light');
+    const [theme, setTheme] = useState<string>(themeName.light);
 
     useEffect(() => {
         setThemeStyleVar(theme);
-    });
+    }, [theme]);
 
     const handleClickSwitch = () => {
-        setTheme(theme === 'Light' ? 'Dark' : 'Light');
+        setTheme(theme === themeName.light ? themeName.dark : themeName.light);
     };
 
     const hendleClick = () => {
@@ -30,6 +32,7 @@ const Layout: FC<ILayoutProps> = ({ getGeolocation }): JSX.Element => {
         <div className={styles.layout}>
             <Header>
                 <Logo />
+                <Input placeholder={placeholders.search} iconName={'search'} />
                 <Switch isActive={false} onClick={handleClickSwitch} />
             </Header>
             <main className={styles.main}>
