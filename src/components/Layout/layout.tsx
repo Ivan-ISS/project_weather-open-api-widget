@@ -11,9 +11,10 @@ import { CurrentDay } from '../CurrentDay';
 
 interface ILayoutProps {
     getGeolocation: () => void;
+    setCity: (value: string) => void;
 }
 
-const Layout: FC<ILayoutProps> = ({ getGeolocation }): JSX.Element => {
+const Layout: FC<ILayoutProps> = ({ getGeolocation, setCity }): JSX.Element => {
     const [theme, setTheme] = useState<string>(themeName.light);
 
     useEffect(() => {
@@ -32,7 +33,11 @@ const Layout: FC<ILayoutProps> = ({ getGeolocation }): JSX.Element => {
         <div className={styles.layout}>
             <Header>
                 <Logo />
-                <Input placeholder={placeholders.search} iconName={'search'} />
+                <Input
+                    placeholder={placeholders.search}
+                    iconName={'search'}
+                    setInputValue={setCity}
+                />
                 <Switch isActive={false} onClick={handleClickSwitch} />
             </Header>
             <main className={styles.main}>
