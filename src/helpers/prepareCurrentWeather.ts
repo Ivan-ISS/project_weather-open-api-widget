@@ -1,5 +1,5 @@
 import { ICurrentWRes, ICurrentW } from '../types/entityTypes';
-import { initialCurrentWeather, countries } from '../data';
+import { initialCurrentWeather, icons, countries } from '../data';
 import { formatDate } from './formatDate';
 
 function prepareCurrentWeather(inputData: ICurrentWRes | null): ICurrentW {
@@ -27,6 +27,7 @@ function prepareCurrentWeather(inputData: ICurrentWRes | null): ICurrentW {
 
         const str = resultData.weather.description;
         resultData.weather.description = str.charAt(0).toUpperCase() + str.slice(1);
+        resultData.weather.icon = icons[resultData.weather.icon];
     }
 
     return resultData;

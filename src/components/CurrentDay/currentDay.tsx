@@ -25,7 +25,7 @@ const CurrentDay: FC<ICurrentDay> = ({ currentWeather }): JSX.Element => {
                 <div className={styles.localTime}>{dt.currentTime}</div>
             </div>
             <div className={styles.lowerPart}>
-                <SunIcon iconName={'clearDay'} className={styles.sunIcon} />
+                <SunIcon iconName={weather.icon} className={styles.sunIcon} />
                 <div className={styles.description}>
                     <div className={styles.temp}>
                         <div className={styles.dayTemp}>{temp}&#176;C</div>
