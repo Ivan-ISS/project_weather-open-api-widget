@@ -1,10 +1,10 @@
 import { SVGAttributes } from 'react';
 
-export interface SvgGenComponentsProps extends SVGAttributes<SVGElement> {
+export interface ISvgGenComponentsProps extends SVGAttributes<SVGElement> {
     iconName: string;
 }
 
-function SvgSelector({ iconName, ...props }: SvgGenComponentsProps) {
+function SvgSelector({ iconName, ...props }: ISvgGenComponentsProps) {
     switch (iconName) {
         case 'location':
             return (
@@ -22,7 +22,7 @@ function SvgSelector({ iconName, ...props }: SvgGenComponentsProps) {
                     />
                 </svg>
             );
-        case 'sun':
+        case 'clearDay':
             return (
                 <svg
                     width="64"

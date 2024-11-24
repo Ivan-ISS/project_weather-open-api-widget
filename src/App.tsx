@@ -1,3 +1,6 @@
+import { ICurrentW, IForecastFiveWRes } from './types/entityTypes';
+import { initialCurrentWeather } from './data';
+import { prepareCurrentWeather } from './helpers/prepareCurrentWeather';
 import { useEffect, useState } from 'react';
 import { fetchCurrentWeather } from './api/fetchCurrentWeather';
 import { fetchForecastFiveWeather } from './api/fetchForecastFiveWeather';
@@ -6,8 +9,8 @@ import { Layout } from './components/Layout';
 
 function App() {
     // Состояние данных погоды
-    const [currentWeather, setCurrentWeather] = useState();
-    const [forecastFiveWeather, setForecastFiveWeather] = useState();
+    const [currentWeather, setCurrentWeather] = useState<ICurrentW>(initialCurrentWeather);
+    const [forecastFiveWeather, setForecastFiveWeather] = useState<IForecastFiveWRes>();
 
     // Состояние данных геолокации
     const [city, setCity] = useState<string>('');
@@ -25,7 +28,7 @@ function App() {
     async function requestWeather(city: string, lat: number, lon: number) {
         const resCurrentWeather = await fetchCurrentWeather({ city, lat, lon });
         const resForecastFiveWeather = await fetchForecastFiveWeather({ city, lat, lon });
-        setCurrentWeather(resCurrentWeather);
+        setCurrentWeather(prepareCurrentWeather(resCurrentWeather));
         setForecastFiveWeather(resForecastFiveWeather);
     }
 
@@ -57,7 +60,12 @@ function App() {
     }, [displayCity]);
 
     return (
-        <Layout getGeolocation={getGeolocation} setDisplayCity={setDisplayCity} setCity={setCity} />
+        <Layout
+            currentWeather={currentWeather}
+            getGeolocation={getGeolocation}
+            setDisplayCity={setDisplayCity}
+            setCity={setCity}
+        />
     );
 }
 

@@ -1,3 +1,4 @@
+import { IForecastFiveWRes } from '../types/entityTypes';
 import { routes, API_KEY } from './routes';
 import { getQueryParams } from '../helpers/getQueryParams';
 
@@ -18,7 +19,7 @@ async function fetchForecastFiveWeather(args: IFetchData) {
             console.log('Ошибка ответа (статус не 200): ', error);
         }
 
-        const data = await response.json();
+        const data: IForecastFiveWRes = await response.json();
 
         return data;
     } catch (error) {

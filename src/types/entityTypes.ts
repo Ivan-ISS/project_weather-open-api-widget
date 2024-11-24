@@ -1,4 +1,4 @@
-export interface ICurrentW {
+export interface ICurrentWRes {
     base: string;
     clouds: {
         all: number;
@@ -48,7 +48,7 @@ export interface ICurrentW {
     };
 }
 
-export interface IForecastW {
+export interface IForecastFiveWRes {
     city: {
         id: number;
         name: string;
@@ -106,4 +106,38 @@ export interface IForecastW {
             visibility: number;
         },
     ];
+}
+
+export interface ICurrentW {
+    dt: {
+        currentDate: string;
+        currentTime: string;
+        dayWeek: string;
+    };
+
+    country: string;
+    city: string;
+    timezone: number;
+
+    temp: number;
+    feelsLike: number;
+    tempMin: number;
+    tempMax: number;
+    pressure: number;
+    humidity: number;
+    clouds: number;
+    visibility: number;
+    sunrise: number;
+    sunset: number;
+    weather: {
+        id: number;
+        main: string;
+        description: string;
+        icon: string;
+    };
+    wind: {
+        speed: number;
+        deg: number;
+        gust: number;
+    };
 }

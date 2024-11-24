@@ -2,13 +2,13 @@ import styles from './input.module.scss';
 import { FC, useState } from 'react';
 import { SvgSelector as SearchIcon } from '../../Common/SvgSelector';
 
-export interface InputProps {
+export interface IInputProps {
     placeholder: string;
     iconName?: string;
     setInputValue: (inputValue: string) => void;
 }
 
-const Input: FC<InputProps> = ({ placeholder, iconName, setInputValue }): JSX.Element => {
+const Input: FC<IInputProps> = ({ placeholder, iconName, setInputValue }): JSX.Element => {
     const [value, setValue] = useState<string>('');
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

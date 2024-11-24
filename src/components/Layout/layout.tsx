@@ -1,4 +1,5 @@
 import styles from './layout.module.scss';
+import { ICurrentW } from '../../types/entityTypes';
 import { FC, useState, useEffect } from 'react';
 import { themeName, placeholders } from '../../data';
 import { setThemeStyleVar } from '../../helpers/setThemeStyleVar';
@@ -10,12 +11,18 @@ import { Switch } from '../Common/Switch';
 import { CurrentDay } from '../CurrentDay';
 
 interface ILayoutProps {
+    currentWeather: ICurrentW;
     getGeolocation: () => void;
     setDisplayCity: (value: boolean) => void;
     setCity: (value: string) => void;
 }
 
-const Layout: FC<ILayoutProps> = ({ getGeolocation, setCity, setDisplayCity }): JSX.Element => {
+const Layout: FC<ILayoutProps> = ({
+    currentWeather,
+    getGeolocation,
+    setCity,
+    setDisplayCity,
+}): JSX.Element => {
     const [theme, setTheme] = useState<string>(themeName.light);
 
     useEffect(() => {
@@ -50,7 +57,7 @@ const Layout: FC<ILayoutProps> = ({ getGeolocation, setCity, setDisplayCity }): 
                     `}
                 >
                     <button onClick={hendleClick}>Клик</button>
-                    <CurrentDay />
+                    <CurrentDay currentWeather={currentWeather} />
                 </div>
             </main>
             <Footer children={'Footer'}></Footer>

@@ -1,12 +1,12 @@
 import styles from './switch.module.scss';
 import { FC, useState, HTMLAttributes } from 'react';
 
-export interface SwitchProps extends HTMLAttributes<HTMLInputElement> {
+export interface ISwitchProps extends HTMLAttributes<HTMLInputElement> {
     isActive: boolean;
     label?: string;
 }
 
-const Switch: FC<SwitchProps> = ({ isActive, label, ...props }) => {
+const Switch: FC<ISwitchProps> = ({ isActive, label, ...props }) => {
     const [isChecked, setIsChecked] = useState(isActive);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

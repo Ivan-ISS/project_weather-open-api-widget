@@ -58,6 +58,7 @@
         
         display: flex;
         justify-content: space-between;
+        align-items: center;
         gap: 50px;
 
         svg {
@@ -71,6 +72,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            gap: 20px;
 
             .temp {
 
@@ -86,7 +88,9 @@
                 }
             }
 
+            .tempFeelsLike,
             .phenomena {
+                text-align: right;
                 font-size: $fontSizeSmallDesktop;
             }
         }
@@ -132,6 +136,7 @@
                     }
                 }
     
+                .tempFeelsLike,
                 .phenomena {
                     font-size: $fontSizeSmallMobile;
                 }

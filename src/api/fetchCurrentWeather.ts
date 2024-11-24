@@ -1,3 +1,4 @@
+import { ICurrentWRes } from '../types/entityTypes';
 import { routes, API_KEY } from './routes';
 import { getQueryParams } from '../helpers/getQueryParams';
 
@@ -18,11 +19,12 @@ async function fetchCurrentWeather(args: IFetchData) {
             console.log('Ошибка ответа (статус не 200): ', error);
         }
 
-        const data = await response.json();
+        const data: ICurrentWRes = await response.json();
 
         return data;
     } catch (error) {
         console.log('Сервер не отвечает: ', error);
+        return null;
     }
 }
 
