@@ -31,8 +31,8 @@ export const initialCurrentWeather: ICurrentW = {
     humidity: 0,
     clouds: 0,
     visibility: 0,
-    sunrise: 0,
-    sunset: 0,
+    sunrise: '',
+    sunset: '',
     weather: {
         id: 0,
         main: '',
@@ -44,10 +44,33 @@ export const initialCurrentWeather: ICurrentW = {
         deg: 0,
         gust: 0,
     },
+    backImg: '',
+};
+
+// Пути да фоновых картинок
+export const backgroundImages: { [key: string]: string } = {
+    '01d': 'images/jpeg/skyDay.jpg',
+    '02d': 'images/jpeg/skyDay.jpg',
+    '03d': 'images/jpeg/skyDay.jpg',
+    '04d': 'images/jpeg/skyDay.jpg',
+    '09d': 'images/jpeg/skyDay.jpg',
+    '10d': 'images/jpeg/skyDay.jpg',
+    '11d': 'images/jpeg/skyDay.jpg',
+    '13d': 'images/jpeg/skyDay.jpg',
+    '50d': 'images/jpeg/skyDay.jpg',
+    '01n': 'images/jpeg/skyNight.jpg',
+    '02n': 'images/jpeg/skyNight.jpg',
+    '03n': 'images/jpeg/skyNight.jpg',
+    '04n': 'images/jpeg/skyNight.jpg',
+    '09n': 'images/jpeg/skyNight.jpg',
+    '10n': 'images/jpeg/skyNight.jpg',
+    '11n': 'images/jpeg/skyNight.jpg',
+    '13n': 'images/jpeg/skyNight.jpg',
+    '50n': 'images/jpeg/skyNight.jpg',
 };
 
 // Иконки
-export const icons: { [key: string]: string } = {
+export const weatherIcons: { [key: string]: string } = {
     '01d': 'clearDay',
     '02d': 'fewCloudsDay',
     '03d': 'scatteredClouds',
@@ -67,6 +90,15 @@ export const icons: { [key: string]: string } = {
     '13n': 'snow',
     '50n': 'mist',
 };
+
+// Иконки - детали текущей погоды
+export const indicatorIcons = [
+    { name: 'Humidity', text: '%' },
+    { name: 'Visibility', text: 'km' },
+    { name: 'Wind', text: 'km/h' },
+    { name: 'Sunrise', text: '' },
+    { name: 'Sunset', text: '' },
+];
 
 // Страны
 export const countries: { [key: string]: string } = {

@@ -1,8 +1,7 @@
 import styles from './currentDay.module.scss';
 import { ICurrentW } from '../../types/entityTypes';
 import { FC } from 'react';
-import { SvgSelector as LocationIcon } from '../Common/SvgSelector';
-import { SvgSelector as SunIcon } from '../Common/SvgSelector';
+import { SvgSelector as Icon } from '../Common/SvgSelector';
 
 export interface ICurrentDay {
     currentWeather: ICurrentW;
@@ -14,7 +13,7 @@ const CurrentDay: FC<ICurrentDay> = ({ currentWeather }): JSX.Element => {
     return (
         <div className={styles.currentDay}>
             <div className={styles.upperPart}>
-                <LocationIcon iconName={'location'} className={styles.location} />
+                <Icon iconName={'location'} />
                 <div>{`${city}, ${country}`}</div>
             </div>
             <div className={styles.middlePart}>
@@ -25,7 +24,7 @@ const CurrentDay: FC<ICurrentDay> = ({ currentWeather }): JSX.Element => {
                 <div className={styles.localTime}>{dt.currentTime}</div>
             </div>
             <div className={styles.lowerPart}>
-                <SunIcon iconName={weather.icon} className={styles.sunIcon} />
+                <Icon iconName={weather.icon} />
                 <div className={styles.description}>
                     <div className={styles.temp}>
                         <div className={styles.dayTemp}>{temp}&#176;C</div>

@@ -25,6 +25,13 @@
         display: flex;
         align-items: center;
         gap: 16px;
+
+        svg {
+            path {
+                fill: var(#{--textColorDefault});
+                transition: $transitionSwitch;
+            }
+        }
     }
 
     .middlePart {
@@ -66,6 +73,10 @@
             height: 125px;
             min-width: 90px;
             min-height: 90px;
+
+            /* border-radius: 100%;
+            background: $baseGrayLight3;
+            box-shadow: $boxShadowContainer; */
         }
 
         .description {

@@ -9,6 +9,7 @@ import { Logo } from '../Common/Logo';
 import { Input } from '../Common/Input';
 import { Switch } from '../Common/Switch';
 import { CurrentDay } from '../CurrentDay';
+import { CurrentDayDetails } from '../CurrentDayDetails';
 
 interface ILayoutProps {
     currentWeather: ICurrentW;
@@ -57,7 +58,10 @@ const Layout: FC<ILayoutProps> = ({
                     `}
                 >
                     <button onClick={hendleClick}>Клик</button>
-                    <CurrentDay currentWeather={currentWeather} />
+                    <div className={styles.current}>
+                        <CurrentDay currentWeather={currentWeather} />
+                        <CurrentDayDetails currentWeather={currentWeather} />
+                    </div>
                 </div>
             </main>
             <Footer children={'Footer'}></Footer>

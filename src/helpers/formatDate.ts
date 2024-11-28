@@ -29,26 +29,17 @@ const months: { [key: number]: string } = {
     12: 'Dec',
 };
 
-const getDay = (date: Date): string => {
-    const dayIndex = date.getDay();
-    return days[dayIndex] || '';
-};
-
-const getMonth = (date: Date): string => {
-    const monthIndex = date.getMonth() + 1;
-    return months[monthIndex] || '';
-};
+const getDay = (date: Date): string => days[date.getUTCDay()];
+const getMonth = (date: Date): string => months[date.getUTCMonth() + 1];
 
 function formatDate(time: number): DateFormatResult {
     const date = new Date(time * 1000); // умножаем на 1000, так как в JavaScript время измеряется в миллисекундах, а time передается в Unix, UTC
-    // date.setHours(date.getHours() + 3); // включить если нужно время по мск
+    // date.setHours(date.getHours() + 3);  // включить если нужно время по мск
 
     const year = date.getUTCFullYear();
-    // const month = date.getUTCMonth() + 1; // добавляем 1, так как месяцы в JavaScript нумеруются с 0
     const day = date.getUTCDate();
     const hours = date.getUTCHours();
     const minutes = String(date.getUTCMinutes()).padStart(2, '0');
-    // const seconds = date.getUTCSeconds();
 
     const dayWeek = getDay(date);
     const monthYear = getMonth(date);

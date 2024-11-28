@@ -127,8 +127,8 @@ export interface ICurrentW {
     humidity: number;
     clouds: number;
     visibility: number;
-    sunrise: number;
-    sunset: number;
+    sunrise: string;
+    sunset: string;
     weather: {
         id: number;
         main: string;
@@ -140,4 +140,5 @@ export interface ICurrentW {
         deg: number;
         gust: number;
     };
+    backImg: string;
 }
