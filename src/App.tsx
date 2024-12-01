@@ -11,7 +11,7 @@ import { Layout } from './components/Layout';
 function App() {
     // Состояние данных погоды
     const [currentWeather, setCurrentWeather] = useState<ICurrentW>(initialCurrentWeather);
-    const [forecastFiveWeather, setForecastFiveWeather] = useState<IForecastFiveW>(
+    const [forecastFiveWeather, setForecastFiveWeather] = useState<IForecastFiveW[]>(
         initialForecastFiveWeather
     );
 

@@ -1,59 +1,51 @@
 import { IForecastFiveWRes, IForecastFiveW } from '../types/entityTypes';
-import { initialForecastFiveWeather, weatherIcons } from '../data';
+import { weatherIcons } from '../data';
 
-function prepareForecastFiveWeather(inputData: IForecastFiveWRes | null): IForecastFiveW {
-    let resultData: IForecastFiveW = initialForecastFiveWeather;
-    resultData = [];
+function prepareForecastFiveWeather(inputData: IForecastFiveWRes | null): IForecastFiveW[] {
+    const resultData: { [date: string]: IForecastFiveW } = {};
 
     if (inputData) {
-        inputData.list.forEach((element, index) => {
-            /* resultData[index].dtTxt = element.dt_txt;
+        inputData.list.forEach((item) => {
+            const date = item.dt_txt.split(' ')[0];
+            const time = item.dt_txt.split(' ')[1];
 
-            resultData[index].temp = Math.round(element.main.temp - 273);
-            resultData[index].feelsLike = Math.round(element.main.feels_like - 273);
-            resultData[index].tempMin = Math.round(element.main.temp_min - 273);
-            resultData[index].tempMax = Math.round(element.main.temp_max - 273);
-            resultData[index].pressure = Math.round(element.main.pressure * 0.7500637554192);
-            resultData[index].humidity = element.main.humidity;
-            resultData[index].clouds = element.clouds.all;
-            resultData[index].visibility = element.visibility;
-            resultData[index].weather = element.weather[0];
-            resultData[index].wind = element.wind;
-            resultData[index].pop = element.pop;
-            resultData[index].pod = element.sys.pod;
+            if (!resultData[date]) {
+                resultData[date] = {
+                    date: date,
+                    hours: [],
+                };
+            }
 
-            resultData[index].weather.icon = weatherIcons[resultData[index].weather.icon];
-            resultData[index].wind.speed = Math.round(element.wind.speed * 3.6);
-            resultData[index].weather.description =
-                resultData[index].weather.description.charAt(0).toUpperCase() +
-                resultData[index].weather.description.slice(1); */
-
-            resultData.push({
-                dtTxt: element.dt_txt,
-
-                temp: Math.round(element.main.temp - 273),
-                feelsLike: Math.round(element.main.feels_like - 273),
-                tempMin: Math.round(element.main.temp_min - 273),
-                tempMax: Math.round(element.main.temp_max - 273),
-                pressure: Math.round(element.main.pressure * 0.7500637554192),
-                humidity: element.main.humidity,
-                clouds: element.clouds.all,
-                visibility: element.visibility,
-                weather: element.weather[0],
-                wind: element.wind,
-                pop: element.pop,
-                pod: element.sys.pod,
+            resultData[date].hours.push({
+                time: time,
+                temp: Math.round(item.main.temp - 273),
+                feelsLike: Math.round(item.main.feels_like - 273),
+                tempMin: Math.round(item.main.temp_min - 273),
+                tempMax: Math.round(item.main.temp_max - 273),
+                pressure: Math.round(item.main.pressure * 0.7500637554192),
+                humidity: item.main.humidity,
+                clouds: item.clouds.all,
+                visibility: item.visibility,
+                weather: {
+                    id: item.weather[0].id,
+                    main: item.weather[0].main,
+                    description:
+                        item.weather[0].description.charAt(0).toUpperCase() +
+                        item.weather[0].description.slice(1),
+                    icon: weatherIcons[item.weather[0].icon],
+                },
+                wind: {
+                    speed: item.wind.speed * 3.6,
+                    deg: item.wind.deg,
+                    gust: item.wind.gust,
+                },
+                pop: item.pop,
+                pod: item.sys.pod,
             });
-
-            resultData[index].weather.icon = weatherIcons[resultData[index].weather.icon];
-            resultData[index].wind.speed = Math.round(element.wind.speed * 3.6);
-            resultData[index].weather.description =
-                resultData[index].weather.description.charAt(0).toUpperCase() +
-                resultData[index].weather.description.slice(1);
         });
     }
 
-    return resultData;
+    return Object.values(resultData);
 }
 
 export { prepareForecastFiveWeather };
