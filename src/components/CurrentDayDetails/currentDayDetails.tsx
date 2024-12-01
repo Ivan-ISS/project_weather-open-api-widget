@@ -12,8 +12,6 @@ const CurrentDayDetails: FC<ICurrentDay> = ({ currentWeather }): JSX.Element => 
     const { humidity, visibility, wind, sunrise, sunset, backImg } = currentWeather;
     const list = [humidity, visibility, wind.speed, sunrise, sunset];
 
-    console.log('backImg: ', backImg);
-
     return (
         <div className={styles.currentDayDetails}>
             {indicatorIcons.map((icon, index) => (
