@@ -1,6 +1,7 @@
-import { ICurrentW, IForecastFiveWRes } from './types/entityTypes';
-import { initialCurrentWeather } from './data';
+import { ICurrentW, IForecastFiveW } from './types/entityTypes';
+import { initialCurrentWeather, initialForecastFiveWeather } from './data';
 import { prepareCurrentWeather } from './helpers/prepareCurrentWeather';
+import { prepareForecastFiveWeather } from './helpers/prepareForecastFiveWeather';
 import { useEffect, useState } from 'react';
 import { fetchCurrentWeather } from './api/fetchCurrentWeather';
 import { fetchForecastFiveWeather } from './api/fetchForecastFiveWeather';
@@ -10,7 +11,9 @@ import { Layout } from './components/Layout';
 function App() {
     // Состояние данных погоды
     const [currentWeather, setCurrentWeather] = useState<ICurrentW>(initialCurrentWeather);
-    const [forecastFiveWeather, setForecastFiveWeather] = useState<IForecastFiveWRes>();
+    const [forecastFiveWeather, setForecastFiveWeather] = useState<IForecastFiveW>(
+        initialForecastFiveWeather
+    );
 
     // Состояние данных геолокации
     const [city, setCity] = useState<string>('');
@@ -29,7 +32,7 @@ function App() {
         const resCurrentWeather = await fetchCurrentWeather({ city, lat, lon });
         const resForecastFiveWeather = await fetchForecastFiveWeather({ city, lat, lon });
         setCurrentWeather(prepareCurrentWeather(resCurrentWeather));
-        setForecastFiveWeather(resForecastFiveWeather);
+        setForecastFiveWeather(prepareForecastFiveWeather(resForecastFiveWeather));
     }
 
     useEffect(() => {
@@ -48,7 +51,7 @@ function App() {
         }
     }, [latitude, longitude, geoStatus]);
 
-    console.log('render');
+    // console.log('render');
 
     useEffect(() => {
         if (currentWeather) console.log('current: ', currentWeather);

@@ -21,6 +21,8 @@ async function fetchCurrentWeather(args: IFetchData) {
 
         const data: ICurrentWRes = await response.json();
 
+        // console.log('response_1: ', data);
+
         return data;
     } catch (error) {
         console.log('Сервер не отвечает: ', error);

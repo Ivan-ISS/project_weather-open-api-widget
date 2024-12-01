@@ -1,4 +1,4 @@
-import { ICurrentW } from './types/entityTypes';
+import { ICurrentW, IForecastFiveW } from './types/entityTypes';
 
 // Наименование цветовой темы
 export const themeName = {
@@ -46,6 +46,32 @@ export const initialCurrentWeather: ICurrentW = {
     },
     backImg: '',
 };
+
+// Пустой объект погоды на пять суток
+export const initialForecastFiveWeather: IForecastFiveW = Array.from({ length: 40 }, () => ({
+    dtTxt: '',
+    temp: 0,
+    feelsLike: 0,
+    tempMin: 0,
+    tempMax: 0,
+    pressure: 0,
+    humidity: 0,
+    clouds: 0,
+    visibility: 0,
+    weather: {
+        id: 0,
+        main: '',
+        description: '',
+        icon: '',
+    },
+    wind: {
+        speed: 0,
+        deg: 0,
+        gust: 0,
+    },
+    pop: 0,
+    pod: '',
+}));
 
 // Пути да фоновых картинок
 export const backgroundImages: { [key: string]: string } = {

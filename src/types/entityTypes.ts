@@ -1,3 +1,4 @@
+// Ответы от сервера
 export interface ICurrentWRes {
     base: string;
     clouds: {
@@ -62,9 +63,6 @@ export interface IForecastFiveWRes {
         sunrise: number;
         sunset: number;
     };
-    cnt: number;
-    cod: string;
-    message: number;
     list: [
         {
             clouds: {
@@ -108,6 +106,7 @@ export interface IForecastFiveWRes {
     ];
 }
 
+// Преобразованные данные для работы
 export interface ICurrentW {
     dt: {
         currentDate: string;
@@ -142,3 +141,31 @@ export interface ICurrentW {
     };
     backImg: string;
 }
+
+export interface IForecastFiveWList {
+    dtTxt: string;
+
+    temp: number;
+    feelsLike: number;
+    tempMin: number;
+    tempMax: number;
+    pressure: number;
+    humidity: number;
+    clouds: number;
+    visibility: number;
+    weather: {
+        id: number;
+        main: string;
+        description: string;
+        icon: string;
+    };
+    wind: {
+        speed: number;
+        deg: number;
+        gust: number;
+    };
+    pop: number;
+    pod: string;
+}
+
+export type IForecastFiveW = IForecastFiveWList[];

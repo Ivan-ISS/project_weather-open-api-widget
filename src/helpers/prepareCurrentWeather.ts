@@ -30,9 +30,6 @@ function prepareCurrentWeather(inputData: ICurrentWRes | null): ICurrentW {
         resultData.backImg = backgroundImages[resultData.weather.icon];
         resultData.weather.icon = weatherIcons[resultData.weather.icon];
         resultData.wind.speed = Math.round(inputData.wind.speed * 3.6);
-
-        console.log(resultData.weather.icon);
-        console.log(backgroundImages[resultData.weather.icon]);
     }
 
     return resultData;

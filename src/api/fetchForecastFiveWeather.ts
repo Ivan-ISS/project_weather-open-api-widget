@@ -21,9 +21,12 @@ async function fetchForecastFiveWeather(args: IFetchData) {
 
         const data: IForecastFiveWRes = await response.json();
 
+        // console.log('response_2: ', data);
+
         return data;
     } catch (error) {
         console.log('Сервер не отвечает: ', error);
+        return null;
     }
 }
 
