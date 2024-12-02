@@ -20,6 +20,12 @@
             display: flex;
             gap: 50px;
         }
+
+        .forecast {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
     }
 }
 

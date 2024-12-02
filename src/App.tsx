@@ -65,6 +65,7 @@ function App() {
     return (
         <Layout
             currentWeather={currentWeather}
+            forecastFiveWeather={forecastFiveWeather}
             getGeolocation={getGeolocation}
             setDisplayCity={setDisplayCity}
             setCity={setCity}

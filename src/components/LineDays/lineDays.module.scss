@@ -1,0 +1,13 @@
+@import "/src/styles/_colors";
+@import "/src/styles/_variables";
+
+.lineDays {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid rgba($baseBlack, 0.5);
+    border-radius: $borderRadiusLarge;
+    box-shadow: var(#{--shadowDefault});;
+    background: var(#{--componentBackgroundDefault});
+    color: var(#{--textColorDefault});
+    transition: $transitionSwitch;
+}

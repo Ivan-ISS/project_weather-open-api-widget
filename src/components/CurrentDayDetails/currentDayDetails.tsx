@@ -4,11 +4,11 @@ import { indicatorIcons } from '../../data';
 import { FC } from 'react';
 import { CardDetail } from './CardDetail';
 
-export interface ICurrentDay {
+export interface ICurrentDayDetailsProps {
     currentWeather: ICurrentW;
 }
 
-const CurrentDayDetails: FC<ICurrentDay> = ({ currentWeather }): JSX.Element => {
+const CurrentDayDetails: FC<ICurrentDayDetailsProps> = ({ currentWeather }): JSX.Element => {
     const { humidity, visibility, wind, sunrise, sunset, backImg } = currentWeather;
     const list = [humidity, visibility, wind.speed, sunrise, sunset];
 

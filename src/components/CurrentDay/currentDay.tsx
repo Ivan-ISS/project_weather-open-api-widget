@@ -3,11 +3,11 @@ import { ICurrentW } from '../../types/entityTypes';
 import { FC } from 'react';
 import { SvgSelector as Icon } from '../Common/SvgSelector';
 
-export interface ICurrentDay {
+export interface ICurrentDayProps {
     currentWeather: ICurrentW;
 }
 
-const CurrentDay: FC<ICurrentDay> = ({ currentWeather }): JSX.Element => {
+const CurrentDay: FC<ICurrentDayProps> = ({ currentWeather }): JSX.Element => {
     const { dt, city, country, temp, tempMin, feelsLike, weather } = currentWeather;
 
     return (

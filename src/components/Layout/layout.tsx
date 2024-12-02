@@ -1,5 +1,5 @@
 import styles from './layout.module.scss';
-import { ICurrentW } from '../../types/entityTypes';
+import { ICurrentW, IForecastFiveW } from '../../types/entityTypes';
 import { FC, useState, useEffect } from 'react';
 import { themeName, placeholders } from '../../data';
 import { setThemeStyleVar } from '../../helpers/setThemeStyleVar';
@@ -10,9 +10,11 @@ import { Input } from '../Common/Input';
 import { Switch } from '../Common/Switch';
 import { CurrentDay } from '../CurrentDay';
 import { CurrentDayDetails } from '../CurrentDayDetails';
+import { LineDays } from '../LineDays';
 
 interface ILayoutProps {
     currentWeather: ICurrentW;
+    forecastFiveWeather: IForecastFiveW[];
     getGeolocation: () => void;
     setDisplayCity: (value: boolean) => void;
     setCity: (value: string) => void;
@@ -20,6 +22,7 @@ interface ILayoutProps {
 
 const Layout: FC<ILayoutProps> = ({
     currentWeather,
+    forecastFiveWeather,
     getGeolocation,
     setCity,
     setDisplayCity,
@@ -58,9 +61,12 @@ const Layout: FC<ILayoutProps> = ({
                     `}
                 >
                     <button onClick={hendleClick}>Клик</button>
-                    <div className={styles.current}>
-                        <CurrentDay currentWeather={currentWeather} />
-                        <CurrentDayDetails currentWeather={currentWeather} />
+                    <div className={styles.forecast}>
+                        <div className={styles.current}>
+                            <CurrentDay currentWeather={currentWeather} />
+                            <CurrentDayDetails currentWeather={currentWeather} />
+                        </div>
+                        <LineDays forecastFiveWeather={forecastFiveWeather} />
                     </div>
                 </div>
             </main>
