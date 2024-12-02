@@ -54,4 +54,20 @@ function formatDate(time: number): DateFormatResult {
     };
 }
 
-export { formatDate };
+function rewriteDate(dateString: string) {
+    const date = new Date(dateString);
+
+    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    const dayOfWeek = daysOfWeek[date.getDay()];
+    const dayOfMonth = date.getDate();
+    const month = months[date.getMonth()];
+
+    return {
+        dayOfWeek,
+        dayOfMonth,
+        month,
+    };
+}
+
+export { formatDate, rewriteDate };
