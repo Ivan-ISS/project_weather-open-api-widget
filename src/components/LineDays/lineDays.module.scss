@@ -6,8 +6,10 @@
     padding: 20px;
     border: 2px solid rgba($baseBlack, 0.5);
     border-radius: $borderRadiusLarge;
-    box-shadow: var(#{--shadowDefault});;
+    box-shadow: var(#{--shadowDefault});
     background: var(#{--componentBackgroundDefault});
-    color: var(#{--textColorDefault});
     transition: $transitionSwitch;
+
+    display: flex;
+    gap: 20px;
 }

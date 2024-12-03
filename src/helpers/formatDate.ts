@@ -61,7 +61,7 @@ function rewriteDate(dateString: string) {
 
     const dayOfWeek = daysOfWeek[date.getDay()];
     const dayOfMonth = date.getDate();
-    const month = months[date.getMonth()];
+    const month = months[date.getMonth() + 1];
 
     return {
         dayOfWeek,
