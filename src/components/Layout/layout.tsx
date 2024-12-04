@@ -11,6 +11,7 @@ import { Switch } from '../Common/Switch';
 import { CurrentDay } from '../CurrentDay';
 import { CurrentDayDetails } from '../CurrentDayDetails';
 import { LineDays } from '../LineDays';
+import { PrimaryButton } from '../Common/Buttons/PrimaryButton';
 
 interface ILayoutProps {
     currentWeather: ICurrentW;
@@ -58,7 +59,9 @@ const Layout: FC<ILayoutProps> = ({
                         ${'containerCommon'}
                     `}
                 >
-                    <button onClick={hendleClick}>Клик</button>
+                    <PrimaryButton onClick={hendleClick} text={'Geolocation'}>
+                        Клик
+                    </PrimaryButton>
                     <div className={styles.forecast}>
                         <div className={styles.current}>
                             <CurrentDay currentWeather={currentWeather} />
