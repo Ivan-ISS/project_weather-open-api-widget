@@ -20,7 +20,6 @@ function App() {
     const [latitude, setLatitude] = useState<number>(0);
     const [longitude, setLongitude] = useState<number>(0);
     const [geoStatus, setGeoStatus] = useState<string>('');
-    const [displayCity, setDisplayCity] = useState<boolean>(false);
 
     const [getGeolocation] = useGeolocation({
         setLatitude,
@@ -40,7 +39,6 @@ function App() {
     }, [getGeolocation]);
 
     useEffect(() => {
-        if (city) setDisplayCity(true);
         if (latitude && longitude) requestWeather(city, latitude, longitude);
     }, [latitude, longitude, city]);
 
@@ -58,16 +56,11 @@ function App() {
         if (forecastFiveWeather) console.log('forecast: ', forecastFiveWeather);
     }, [currentWeather, forecastFiveWeather]);
 
-    useEffect(() => {
-        console.log('displayCity: ', displayCity);
-    }, [displayCity]);
-
     return (
         <Layout
             currentWeather={currentWeather}
             forecastFiveWeather={forecastFiveWeather}
             getGeolocation={getGeolocation}
-            setDisplayCity={setDisplayCity}
             setCity={setCity}
         />
     );

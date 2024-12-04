@@ -16,7 +16,6 @@ interface ILayoutProps {
     currentWeather: ICurrentW;
     forecastFiveWeather: IForecastFiveW[];
     getGeolocation: () => void;
-    setDisplayCity: (value: boolean) => void;
     setCity: (value: string) => void;
 }
 
@@ -25,7 +24,6 @@ const Layout: FC<ILayoutProps> = ({
     forecastFiveWeather,
     getGeolocation,
     setCity,
-    setDisplayCity,
 }): JSX.Element => {
     const [theme, setTheme] = useState<string>(themeName.light);
 
@@ -39,7 +37,7 @@ const Layout: FC<ILayoutProps> = ({
 
     const hendleClick = () => {
         getGeolocation();
-        setDisplayCity(false);
+        setCity('');
     };
 
     return (
