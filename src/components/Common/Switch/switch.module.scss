@@ -6,8 +6,8 @@
     font-size: 17px;
     position: relative;
     display: inline-block;
-    width: 41px;
-    height: 23px;
+    width: 90px;
+    height: 50px;
 
     .input {
         opacity: 1;
@@ -35,6 +35,7 @@
         transition: 0.4s;
         border-radius: 30px;
         border: 1px solid rgba($baseBlack, 0.2);
+        box-shadow: $boxShadowSmallEl;
 
         &:before {
             position: absolute;
@@ -45,9 +46,15 @@
             left: 2%;
             top: 0;
             bottom: 0;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba($baseBlack, 0.4);
+            //box-shadow: 0 2px 5px rgba($baseBlack, 0.4);
             transition: $transitionSwitch;
+
+            background: var(#{--switchBackgroundDefault});
+            box-shadow: 
+                inset 4px -3px 8px 0 rgba(129, 129, 129, 0.25),
+                inset -4px 0 4px 0 rgba(0, 0, 0, 0.25),
+                inset 1px 4px 4px 0 rgba(0, 0, 0, 0.25),
+                -4px 0 4px 0 rgba(0, 0, 0, 0.25);
         }
     }
 }

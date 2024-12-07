@@ -4,6 +4,7 @@ function setThemeStyleVar(theme: string) {
         'bodyBackground',
         'componentBackground',
         'cardBackground',
+        'switchBackground',
         'shadow',
         'textColor',
     ];

@@ -43,16 +43,7 @@ const Layout: FC<ILayoutProps> = ({
 
     return (
         <div className={styles.layout}>
-            <Header>
-                <Logo />
-                <PrimaryButton onClick={hendleClick} text={'Current location'} />
-                <Input
-                    placeholder={placeholders.search}
-                    iconName={'search'}
-                    setInputValue={setCity}
-                />
-                <Switch isActive={false} onClick={handleClickSwitch} />
-            </Header>
+            <Header children={'Header'}></Header>
             <main className={styles.main}>
                 <div
                     className={`
@@ -60,6 +51,18 @@ const Layout: FC<ILayoutProps> = ({
                         ${'containerCommon'}
                     `}
                 >
+                    <div className={styles.header}>
+                        <Logo />
+                        <div className={styles.searchPanel}>
+                            <Switch isActive={false} onClick={handleClickSwitch} />
+                            <Input
+                                placeholder={placeholders.search}
+                                iconName={'search'}
+                                setInputValue={setCity}
+                            />
+                            <PrimaryButton onClick={hendleClick} text={'Current location'} />
+                        </div>
+                    </div>
                     <div className={styles.forecast}>
                         <div className={styles.current}>
                             <CurrentDay currentWeather={currentWeather} />

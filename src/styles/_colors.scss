@@ -20,6 +20,9 @@ $componentBackgroundLight: $baseWhite;
 $cardBackgroundDark: #2E3035;
 $cardBackgroundLight: rgb(71, 147, 255, 0.2);
 
+$switchBackgroundDark: #2E3035;
+$switchBackgroundLight: #939CB0;
+
 $shadowDark: 10px 10px 4px 0 $baseBlack;
 $shadowLight: 10px 10px 4px 0 rgba($baseBlack, 0.5);
 
@@ -41,6 +44,11 @@ $textColorLight: #0D1117;
     --cardBackgroundDark: #{$cardBackgroundDark};
     --cardBackgroundLight: #{$cardBackgroundLight};
     --cardBackgroundDefault: var(#{--cardBackgroundLight});
+
+    // switchBackground
+    --switchBackgroundDark: #{$switchBackgroundDark};
+    --switchBackgroundLight: #{$switchBackgroundLight};
+    --switchBackgroundDefault: var(#{--switchBackgroundLight});
 
     // shadow
     --shadowDark: #{$shadowDark};

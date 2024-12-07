@@ -79,6 +79,7 @@ export const initialForecastFiveWeather: IForecastFiveW[] = Array.from({ length:
 
 // Время для дня и ночи
 export const timesToCheckDay = [
+    '12:00:00',
     '15:00:00',
     '18:00:00',
     '21:00:00',
@@ -87,7 +88,6 @@ export const timesToCheckDay = [
     '06:00:00',
     '09:00:00',
     '12:00:00',
-    '15:00:00',
 ];
 
 export const timesToCheckNight = [

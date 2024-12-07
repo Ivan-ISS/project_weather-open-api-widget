@@ -16,15 +16,29 @@
             box-sizing: content-box;
         }
 
-        .current {
+        .header {
             display: flex;
-            gap: 50px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+
+            margin-bottom: 50px;
+
+            .searchPanel {
+                display: flex;
+                gap: 15px;
+            }
         }
 
         .forecast {
             display: flex;
             flex-direction: column;
             gap: 50px;
+
+            .current {
+                display: flex;
+                gap: 50px;
+            }
         }
     }
 }
