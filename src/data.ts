@@ -49,10 +49,9 @@ export const initialCurrentWeather: ICurrentW = {
 
 // Пустой объект погоды на пять суток
 export const initialForecastFiveWeather: IForecastFiveW[] = Array.from({ length: 5 }, () => ({
-    date: '',
+    date: '1980-01-01',
     hours: Array.from({ length: 8 }, () => ({
-        time: '',
-        dtTxt: '',
+        time: '15:00:00',
         temp: 0,
         feelsLike: 0,
         tempMin: 0,
@@ -63,9 +62,9 @@ export const initialForecastFiveWeather: IForecastFiveW[] = Array.from({ length:
         visibility: 0,
         weather: {
             id: 0,
-            main: '',
-            description: '',
-            icon: '',
+            main: 'Main',
+            description: 'Description',
+            icon: 'clearDay',
         },
         wind: {
             speed: 0,
@@ -73,7 +72,7 @@ export const initialForecastFiveWeather: IForecastFiveW[] = Array.from({ length:
             gust: 0,
         },
         pop: 0,
-        pod: '',
+        pod: 'n',
     })),
 }));
 
@@ -102,7 +101,7 @@ export const timesToCheckNight = [
     '00:00:00',
 ];
 
-// Пути да фоновых картинок
+// Пути до фоновых картинок
 export const backgroundImages: { [key: string]: string } = {
     '01d': 'images/jpeg/skyDay.jpg',
     '02d': 'images/jpeg/skyDay.jpg',

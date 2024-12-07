@@ -43,7 +43,9 @@ const CardDay: FC<ICardDayProps> = ({ date, hourInfo }): JSX.Element => {
                     <div className={styles.day}>{dayOfWeek}</div>
                     <div className={styles.date}>{`${dayOfMonth} ${month}`}</div>
                 </div>
-                <Icon className={styles.icon} iconName={weather.icon} />
+                <div className={styles.wrapIcon}>
+                    <Icon className={styles.icon} iconName={weather.icon} />
+                </div>
                 <div className={styles.temp}>
                     <div className={styles.dayTemp}>{tempDay}&#176;C</div>
                     <div className={styles.nightTemp}>{tempNight}&#176;C</div>
