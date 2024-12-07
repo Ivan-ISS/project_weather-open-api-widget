@@ -13,6 +13,9 @@ import { CurrentDayDetails } from '../CurrentDayDetails';
 import { LineDays } from '../LineDays';
 import { PrimaryButton } from '../Common/Buttons/PrimaryButton';
 
+import { Main } from '../Main';
+import { WeatherWidget } from '../WeatherWidget';
+
 interface ILayoutProps {
     currentWeather: ICurrentW;
     forecastFiveWeather: IForecastFiveW[];
@@ -72,6 +75,11 @@ const Layout: FC<ILayoutProps> = ({
                     </div>
                 </div>
             </main>
+
+            <Main>
+                <WeatherWidget />
+            </Main>
+
             <Footer children={'Footer'}></Footer>
         </div>
     );
