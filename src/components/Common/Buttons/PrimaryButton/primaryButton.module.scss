@@ -1,37 +1,26 @@
 @import "/src/styles/_colors";
 @import "/src/styles/_variables";
 
-
 .button {
     cursor: pointer;
     border: none;
     font-family: inherit;
-    font-weight: 700;
-    background: $baseBlue;
+    font-weight: 600;
+    background: $baseBlueLight;
     padding: 16px;
-    color: $baseWhite;
     transition: $transitionHover;
-    border-radius: 12px;
+    border-radius: $borderRadiusComEl;
+    box-shadow: $boxShadowSmallEl;
+    color: var(#{--textColorDefault});
     width: 100%;
-
-    /* &:hover {
-        background: $backgroundHoverPrimBtn;
-    } */
-
-    /* &:active {
-        background: $backgroundActivePrimBtn;
-    } */
-}
-
-.disabled {
-    opacity: 0.4;
-    pointer-events: none;
-}
-
-/* .active {
-    background: $backgroundActivePrimBtn;
+    max-width: 250px;
+    transition: $transitionHover;
 
     &:hover {
-        background: $backgroundActivePrimBtn;
+        color: $baseBlue;
     }
-} */
+
+    &:active {
+        background: rgba(71, 147, 255, 0.4);
+    }
+}

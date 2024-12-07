@@ -2,7 +2,8 @@
 @import "/src/styles/_variables";
 
 .inputWrap {
-    min-width: 215px;
+    width: 100%;
+    max-width: 315px;
     display: flex;
     align-items: center;
     gap: 16px;

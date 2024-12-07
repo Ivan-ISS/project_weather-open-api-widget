@@ -45,6 +45,7 @@ const Layout: FC<ILayoutProps> = ({
         <div className={styles.layout}>
             <Header>
                 <Logo />
+                <PrimaryButton onClick={hendleClick} text={'Current location'} />
                 <Input
                     placeholder={placeholders.search}
                     iconName={'search'}
@@ -59,9 +60,6 @@ const Layout: FC<ILayoutProps> = ({
                         ${'containerCommon'}
                     `}
                 >
-                    <PrimaryButton onClick={hendleClick} text={'Geolocation'}>
-                        Клик
-                    </PrimaryButton>
                     <div className={styles.forecast}>
                         <div className={styles.current}>
                             <CurrentDay currentWeather={currentWeather} />

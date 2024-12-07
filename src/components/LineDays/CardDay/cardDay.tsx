@@ -1,5 +1,6 @@
 import styles from './cardDay.module.scss';
 import { IHourInfo } from '../../../types/entityTypes';
+import { timesToCheckDay, timesToCheckNight } from '../../../data';
 import { rewriteDate } from '../../../helpers/formatDate';
 import { FC } from 'react';
 import { SvgSelector as Icon } from '../../Common/SvgSelector';
@@ -12,8 +13,25 @@ export interface ICardDayProps {
 const CardDay: FC<ICardDayProps> = ({ date, hourInfo }): JSX.Element => {
     const { dayOfWeek, dayOfMonth, month } = rewriteDate(date);
 
-    const dayInfo = hourInfo.find((item) => item.time === '15:00:00' || !item.time);
-    const nightInfo = hourInfo.find((item) => item.time === '00:00:00' || !item.time);
+    /* const dayInfo = hourInfo.find((item) => item.time === '00:00:00' || !item.time);
+    const nightInfo = hourInfo.find((item) => item.time === '00:00:00' || !item.time); */
+
+    let dayInfo: IHourInfo | undefined;
+    let nightInfo: IHourInfo | undefined;
+
+    for (const time of timesToCheckDay) {
+        dayInfo = hourInfo.find((item) => item.time === time || !item.time);
+        if (dayInfo) {
+            break;
+        }
+    }
+
+    for (const time of timesToCheckNight) {
+        nightInfo = hourInfo.find((item) => item.time === time || !item.time);
+        if (nightInfo) {
+            break;
+        }
+    }
 
     const { temp: tempDay, weather } = dayInfo as IHourInfo;
     const { temp: tempNight } = nightInfo as IHourInfo;
