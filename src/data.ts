@@ -14,13 +14,13 @@ export const placeholders = {
 // Пустой объект погоды
 export const initialCurrentWeather: ICurrentW = {
     dt: {
-        currentDate: '',
-        currentTime: '',
-        dayWeek: '',
+        currentDate: 'Day Month, Year',
+        currentTime: '00:00',
+        dayWeek: 'Day week',
     },
 
-    country: '',
-    city: '',
+    country: 'Country',
+    city: 'City',
     timezone: 0,
 
     temp: 0,
@@ -31,20 +31,20 @@ export const initialCurrentWeather: ICurrentW = {
     humidity: 0,
     clouds: 0,
     visibility: 0,
-    sunrise: '',
-    sunset: '',
+    sunrise: '00:00',
+    sunset: '00:00',
     weather: {
         id: 0,
-        main: '',
-        description: '',
-        icon: '',
+        main: 'Main',
+        description: 'Description',
+        icon: 'clearDay',
     },
     wind: {
         speed: 0,
         deg: 0,
         gust: 0,
     },
-    backImg: '',
+    backImg: 'images/jpeg/skyDay.jpg',
 };
 
 // Пустой объект погоды на пять суток

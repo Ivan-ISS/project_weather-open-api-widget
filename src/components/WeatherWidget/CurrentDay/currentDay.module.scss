@@ -7,6 +7,8 @@
     padding: 24px;
     border: 2px solid rgba($baseBlack, 0.5);
     border-radius: $borderRadiusLarge;
+    font-size: $fontSizeSmallDesktop;
+
     box-shadow: var(#{--shadowDefault});
     background: var(#{--componentBackgroundDefault});
     color: var(#{--textColorDefault});
@@ -15,6 +17,17 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
+
+    .dayTemp,
+    .localTime,
+    .weekDay {
+        font-size: $fontSizeLargeDesktop;
+    }
+
+    .nightTemp,
+    .date {
+        color: $baseGrayLight1;
+    }
 
     .upperPart {
         width: fit-content;
@@ -35,8 +48,6 @@
     }
 
     .middlePart {
-        width: 100%;
-
         display: flex;
         justify-content: space-between;
         gap: 50px;
@@ -45,24 +56,10 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
-
-            .weekDay {
-                font-size: $fontSizeLargeDesktop;
-            }
-    
-            .date {
-                font-size: $fontSizeSmallDesktop;
-                color: $baseGrayLight1;
-            }
-        }
-
-        .localTime {
-            font-size: $fontSizeLargeDesktop;
         }
     }
 
     .lowerPart {
-        
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -73,10 +70,6 @@
             height: 125px;
             min-width: 90px;
             min-height: 90px;
-
-            /* border-radius: 100%;
-            background: $baseGrayLight3;
-            box-shadow: $boxShadowContainer; */
         }
 
         .description {
@@ -84,74 +77,7 @@
             flex-direction: column;
             justify-content: space-between;
             gap: 20px;
-
-            .temp {
-
-                .dayTemp {
-                    text-align: right;
-                    font-size: $fontSizeLargeDesktop;
-                }
-    
-                .nightTemp {
-                    text-align: right;
-                    font-size: $fontSizeMediumDesktop;
-                    color: $baseGrayLight1;
-                }
-            }
-
-            .tempFeelsLike,
-            .phenomena {
-                text-align: right;
-                font-size: $fontSizeSmallDesktop;
-            }
-        }
-    }
-}
-
-@media (max-width: 767px) {
-
-    .currentDay {
-        max-width: 350px;
-        padding: 18px;
-    
-        .middlePart {
-    
-            .day {
-    
-                .weekDay {
-                    font-size: $fontSizeLargeMobile;
-                }
-        
-                .date {
-                    font-size: $fontSizeSmallMobile;
-                }
-            }
-    
-            .localTime {
-                font-size: $fontSizeLargeMobile;
-            }
-        }
-    
-        .lowerPart {
-    
-            .description {
-    
-                .temp {
-    
-                    .dayTemp {
-                        font-size: $fontSizeLargeMobile;
-                    }
-        
-                    .nightTemp {
-                        font-size: $fontSizeMediumMobile;
-                    }
-                }
-    
-                .tempFeelsLike,
-                .phenomena {
-                    font-size: $fontSizeSmallMobile;
-                }
-            }
+            text-align: right;
         }
     }
 }
