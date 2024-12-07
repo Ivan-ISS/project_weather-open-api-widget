@@ -1,7 +1,7 @@
 import styles from './currentDay.module.scss';
-import { ICurrentW } from '../../types/entityTypes';
+import { ICurrentW } from '../../../types/entityTypes';
 import { FC } from 'react';
-import { SvgSelector as Icon } from '../Common/SvgSelector';
+import { SvgSelector as Icon } from '../../Common/SvgSelector';
 
 export interface ICurrentDayProps {
     currentWeather: ICurrentW;

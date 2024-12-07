@@ -1,6 +1,6 @@
 import styles from './currentDayDetails.module.scss';
-import { ICurrentW } from '../../types/entityTypes';
-import { indicatorIcons } from '../../data';
+import { ICurrentW } from '../../../types/entityTypes';
+import { indicatorIcons } from '../../../data';
 import { FC } from 'react';
 import { CardDetail } from './CardDetail';
 

@@ -1,6 +1,6 @@
 import styles from './cardDetail.module.scss';
 import { FC } from 'react';
-import { SvgSelector as Icon } from '../../Common/SvgSelector';
+import { SvgSelector as Icon } from '../../../Common/SvgSelector';
 
 export interface ICardDetailProps {
     iconName: string;

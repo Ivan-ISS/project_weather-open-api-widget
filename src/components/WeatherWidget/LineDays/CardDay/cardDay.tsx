@@ -1,9 +1,9 @@
 import styles from './cardDay.module.scss';
-import { IHourInfo } from '../../../types/entityTypes';
-import { timesToCheckDay, timesToCheckNight } from '../../../data';
-import { rewriteDate } from '../../../helpers/formatDate';
+import { IHourInfo } from '../../../../types/entityTypes';
+import { timesToCheckDay, timesToCheckNight } from '../../../../data';
+import { rewriteDate } from '../../../../helpers/formatDate';
 import { FC } from 'react';
-import { SvgSelector as Icon } from '../../Common/SvgSelector';
+import { SvgSelector as Icon } from '../../../Common/SvgSelector';
 
 export interface ICardDayProps {
     date: string;

@@ -17,10 +17,10 @@ import { FC, useState, useEffect } from 'react';
 import { Logo } from '../Common/Logo';
 import { Input } from '../Common/Input';
 import { Switch } from '../Common/Switch';
-import { CurrentDay } from '../CurrentDay';
-import { CurrentDayDetails } from '../CurrentDayDetails';
-import { LineDays } from '../LineDays';
 import { PrimaryButton } from '../Common/Buttons/PrimaryButton';
+import { CurrentDay } from './CurrentDay';
+import { CurrentDayDetails } from './CurrentDayDetails';
+import { LineDays } from './LineDays';
 
 const WeatherWidget: FC = () => {
     const [theme, setTheme] = useState<string>(themeName.light);

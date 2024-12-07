@@ -1,5 +1,5 @@
 import styles from './lineDays.module.scss';
-import { IForecastFiveW } from '../../types/entityTypes';
+import { IForecastFiveW } from '../../../types/entityTypes';
 import { FC } from 'react';
 import { CardDay } from './CardDay';
 
