@@ -10,16 +10,16 @@
     font-weight: 600;
     border-radius: $borderRadiusLarge;
     box-shadow: $boxShadowSmall;
-    color: $insertGrayLight;
+    color: $textForInsertGray;
 
     background: var(#{--componentBackgroundDefault});
     transition: $transitionSwitch;
 
     &:hover {
-        color: $baseBlue;
+        color: $textForCommonBlue;
     }
 
     &:active {
-        background: rgba($baseBlue, 0.4);
+        background: $backgroundForBtnBlueLight;
     }
 }

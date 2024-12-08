@@ -1,12 +1,27 @@
+// Черные оттенки (могут подразделятся на текст, фон, тень и пр., которые в свою очередь могут делиться по компонентам (для карточек, кнопок, инпутов и т.п.)
 $baseBlack: #0d1117;
+$backgroundForCommonBlack: $baseBlack;
+$borderForCommonBlack: $baseBlack;
+$shadowForCommonBlack: $baseBlack;
+$textForCommonBlack: $baseBlack;
+
+// Белые оттенки
 $baseWhite: #fff;
+$textForCommonWhite: $baseWhite;
+$fillForIconWhite: $baseWhite;
 
-$componentBackgroundGray: #444444;
-$textGrayLight: #939cb0;
-$insertGrayLight: #939cb0;
+// Серые оттенки
+$baseGray: #444444;
+$baseGrayLight: #939cb0;
+$backgroundForCommonGray: $baseGray;
+$textForCommonGray: $baseGrayLight;
+$textForInsertGray: $baseGrayLight;
 
+// Синие оттенки
 $baseBlue: #4793ff;
-$baseBlueLight: rgba($baseBlue, 0.2);
+$textForCommonBlue: $baseBlue;
+$backgroundForCommonBlueLight: rgba($baseBlue, 0.2);
+$backgroundForBtnBlueLight: rgba($baseBlue, 0.4);
 
 
 

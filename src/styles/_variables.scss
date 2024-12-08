@@ -1,6 +1,6 @@
 @import "_colors";
 
-$boxShadowSmall: 0px 0px 5px rgba($baseBlack, 0.4);
+$boxShadowSmall: 0px 0px 5px rgba($shadowForCommonBlack, 0.4);
 
 $fontSizeLargeDesktop: 36px;
 $fontSizeMediumDesktop: 18px;
@@ -9,7 +9,7 @@ $fontSizeSmallDesktop: 14px;
 $baseFontSizeDesktop: 16px;
 $baseFontSizeMobile: 14px;
 
-$baseBorder: 2px solid rgba($baseBlack, 0.5);
+$baseBorder: 2px solid rgba($borderForCommonBlack, 0.5);
 
 $borderRadiusLarge: 36px;
 $borderRadiusMedium: 20px;

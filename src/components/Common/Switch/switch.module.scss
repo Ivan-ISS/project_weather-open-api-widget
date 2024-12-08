@@ -15,7 +15,7 @@
         opacity: 1;
 
         &:checked + .slider {
-            background-color: $componentBackgroundGray;
+            background-color: $backgroundForCommonGray;
             border: 1px solid transparent;
         }
 
@@ -34,7 +34,7 @@
         background: #fff;
         transition: 0.4s;
         border-radius: 30px;
-        border: 1px solid rgba($baseBlack, 0.2);
+        border: 1px solid rgba($borderForCommonBlack, 0.2);
         box-shadow: $boxShadowSmall;
 
         &:before {
