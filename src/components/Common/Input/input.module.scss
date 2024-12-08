@@ -3,19 +3,19 @@
 
 .inputWrap {
     width: 100%;
+    padding: 8px 20px;
     display: flex;
     align-items: center;
     gap: 16px;
+    border-radius: $borderRadiusLarge;
+    box-shadow: $boxShadowSmall;
 
-    padding: 8px 20px;
-    border-radius: $borderRadiusComEl;
     background: var(#{--componentBackgroundDefault});
-    box-shadow: $boxShadowSmallEl;
     transition: $transitionSwitch;
     
     .btnIcon {
-        background: transparent;
         cursor: pointer;
+        background: transparent;
 
         svg {
             width: 28px;
@@ -25,16 +25,17 @@
 
     .input {
         width: 100%;
-        outline: none;
         height: 28px;
+        outline: none;
+
         color: var(#{--textColorDefault});
         background: var(#{--componentBackgroundDefault});
         transition: $transitionSwitch;
 
         &::placeholder {
-            color: $baseGrayLight1;
             font-family: "Montserrat";
             font-weight: 500;
+            color: $baseGrayLight1;
         }
     }
 }

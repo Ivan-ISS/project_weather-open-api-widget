@@ -10,8 +10,8 @@
     width: 100%;
     max-width: 760px;
     padding: 24px;
-    border: 2px solid rgba($baseBlack, 0.5);
-    border-radius: $borderRadiusLarge;
+    border: $baseBorder;
+    border-radius: $borderRadiusMedium;
     color: $baseWhite;
 
     box-shadow: var(#{--shadowDefault});

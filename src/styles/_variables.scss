@@ -1,38 +1,18 @@
 @import "_colors";
 
-$boxShadowContainer: 0 0 30px 0 rgba($baseBlack, 0.35);
-$boxShadowSmallEl: 0px 0px 5px rgba($baseBlack, 0.4);
-
-$transitionHover: 0.3s ease;
+$boxShadowSmall: 0px 0px 5px rgba($baseBlack, 0.4);
 
 $fontSizeLargeDesktop: 36px;
-$fontSizeMediumDesktop: 24px;
-$fontSizeSmallDesktop: 18px;
-$fontSizeLittleDesktop: 14px;
-$fontSizeLargeMobile: 28px;
-$fontSizeMediumMobile: 18px;
-$fontSizeSmallMobile: 14px;
+$fontSizeMediumDesktop: 18px;
+$fontSizeSmallDesktop: 14px;
 
 $baseFontSizeDesktop: 16px;
 $baseFontSizeMobile: 14px;
 
-$borderRadiusComEl: 36px;
-$borderRadiusLarge: 20px;
-$borderRadiusMedium: 12px;
-$borderRadiusSmall: 8px;
+$baseBorder: 2px solid rgba($baseBlack, 0.5);
 
-$boxShadow: 10px 10px 4px 0 rgba($baseBlack, 0.5);
+$borderRadiusLarge: 36px;
+$borderRadiusMedium: 20px;
+$borderRadiusSmall: 12px;
 
-$textShadow: 
-    0.2px 0.2px 2.5px rgba($baseBlack, 0.355),
-    -0.2px -0.2px 2.5px rgba($baseBlack, 0.355),
-    0.2px -0.2px 2.5px rgba($baseBlack, 0.355),
-    -0.2px 0.2px 2.5px rgba($baseBlack, 0.355);
-
-$textShadowSlim: 
-    0.1px 0.1px 1px rgba($baseBlue, 0.355),
-    -0.1px -0.1px 1px rgba($baseBlue, 0.355),
-    0.1px -0.1px 1px rgba($baseBlue, 0.355),
-    -0.1px 0.1px 1px rgba($baseBlue, 0.355);
-
-$transitionSwitch: 0.4s;
+$transitionSwitch: 0.4s ease;

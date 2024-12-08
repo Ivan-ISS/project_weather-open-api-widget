@@ -5,9 +5,9 @@
     width: 100%;
     max-width: 400px;
     padding: 24px;
-    border: 2px solid rgba($baseBlack, 0.5);
-    border-radius: $borderRadiusLarge;
-    font-size: $fontSizeSmallDesktop;
+    border: $baseBorder;
+    border-radius: $borderRadiusMedium;
+    font-size: $fontSizeMediumDesktop;
 
     box-shadow: var(#{--shadowDefault});
     background: var(#{--componentBackgroundDefault});

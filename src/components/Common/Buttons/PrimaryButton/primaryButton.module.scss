@@ -3,16 +3,17 @@
 
 .button {
     cursor: pointer;
+    width: 100%;
+    padding: 16px;
     border: none;
     font-family: inherit;
     font-weight: 600;
-    background: var(#{--componentBackgroundDefault});
-    padding: 16px;
-    transition: $transitionSwitch;
-    border-radius: $borderRadiusComEl;
-    box-shadow: $boxShadowSmallEl;
+    border-radius: $borderRadiusLarge;
+    box-shadow: $boxShadowSmall;
     color: $baseGrayLight1;
-    width: 100%;
+
+    background: var(#{--componentBackgroundDefault});
+    transition: $transitionSwitch;
 
     &:hover {
         color: $baseBlue;
