@@ -10,7 +10,7 @@
     font-weight: 600;
     border-radius: $borderRadiusLarge;
     box-shadow: $boxShadowSmall;
-    color: $baseGrayLight1;
+    color: $insertGrayLight;
 
     background: var(#{--componentBackgroundDefault});
     transition: $transitionSwitch;
@@ -20,6 +20,6 @@
     }
 
     &:active {
-        background: rgba(71, 147, 255, 0.4);
+        background: rgba($baseBlue, 0.4);
     }
 }

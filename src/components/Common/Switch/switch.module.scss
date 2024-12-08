@@ -15,7 +15,7 @@
         opacity: 1;
 
         &:checked + .slider {
-            background-color: #444444;
+            background-color: $componentBackgroundGray;
             border: 1px solid transparent;
         }
 

@@ -1,32 +1,32 @@
-$baseBlack: #0D1117;
+$baseBlack: #0d1117;
 $baseWhite: #fff;
 
-$baseGray: #444444;
-$baseGrayLight1: #939CB0;
-$baseGrayLight3: rgba($baseBlack, 0.35);
+$componentBackgroundGray: #444444;
+$textGrayLight: #939cb0;
+$insertGrayLight: #939cb0;
 
-$baseBlue: #4793FF;
-$baseBlueLight: rgba(71, 147, 255, 0.2);
+$baseBlue: #4793ff;
+$baseBlueLight: rgba($baseBlue, 0.2);
 
 
 
 $bodyBackgroundDark: #1e1e1e;
-$bodyBackgroundLight: $baseWhite;
+$bodyBackgroundLight: #fff;
 
 $componentBackgroundDark: #444444;
-$componentBackgroundLight: $baseWhite;
+$componentBackgroundLight: #fff;
 
-$cardBackgroundDark: #2E3035;
-$cardBackgroundLight: rgb(71, 147, 255, 0.2);
+$cardBackgroundDark: #2e3035;
+$cardBackgroundLight: rgb(#4793ff, 0.2);
 
-$switchBackgroundDark: #2E3035;
-$switchBackgroundLight: #939CB0;
+$switchBackgroundDark: #2e3035;
+$switchBackgroundLight: #939cb0;
 
-$shadowDark: 10px 10px 4px 0 $baseBlack;
-$shadowLight: 10px 10px 4px 0 rgba($baseBlack, 0.5);
+$shadowDark: 10px 10px 4px 0 #0d1117;
+$shadowLight: 10px 10px 4px 0 rgba(#0d1117, 0.5);
 
-$textColorDark: $baseWhite;
-$textColorLight: #0D1117;
+$textColorDark: #fff;
+$textColorLight: #0d1117;
 
 :root {
     // bodyBackground
