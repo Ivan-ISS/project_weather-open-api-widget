@@ -1,5 +1,5 @@
 import { IForecastFiveWRes, IForecastFiveW } from '../types/entityTypes';
-import { weatherIcons, conversionFactors } from '../data';
+import { weatherIcons, conversionFactors, initialForecastFiveWeather } from '../data';
 
 function prepareForecastFiveWeather(inputData: IForecastFiveWRes | null): IForecastFiveW[] {
     const resultData: { [date: string]: IForecastFiveW } = {};
@@ -43,6 +43,8 @@ function prepareForecastFiveWeather(inputData: IForecastFiveWRes | null): IForec
                 pod: item.sys.pod,
             });
         });
+    } else {
+        return initialForecastFiveWeather;
     }
 
     return Object.values(resultData);

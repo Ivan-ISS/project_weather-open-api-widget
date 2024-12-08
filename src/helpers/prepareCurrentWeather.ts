@@ -9,7 +9,7 @@ import {
 import { formatDate } from './formatDate';
 
 function prepareCurrentWeather(inputData: ICurrentWRes | null): ICurrentW {
-    const resultData: ICurrentW = initialCurrentWeather;
+    const resultData: ICurrentW = { ...initialCurrentWeather };
 
     if (inputData) {
         resultData.dt = formatDate(Date.now() * 0.001 + inputData.timezone);
