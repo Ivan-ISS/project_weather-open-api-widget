@@ -1,5 +1,11 @@
 import { ICurrentWRes, ICurrentW } from '../types/entityTypes';
-import { initialCurrentWeather, weatherIcons, countries, backgroundImages } from '../data';
+import {
+    initialCurrentWeather,
+    weatherIcons,
+    countries,
+    backgroundImages,
+    conversionFactors,
+} from '../data';
 import { formatDate } from './formatDate';
 
 function prepareCurrentWeather(inputData: ICurrentWRes | null): ICurrentW {
@@ -12,24 +18,26 @@ function prepareCurrentWeather(inputData: ICurrentWRes | null): ICurrentW {
         resultData.country = countries[inputData.sys.country];
         resultData.timezone = inputData.timezone;
 
-        resultData.temp = Math.round(inputData.main.temp - 273);
-        resultData.feelsLike = Math.round(inputData.main.feels_like - 273);
-        resultData.tempMin = Math.round(inputData.main.temp_min - 273);
-        resultData.tempMax = Math.round(inputData.main.temp_max - 273);
-        resultData.pressure = Math.round(inputData.main.pressure * 0.7500637554192);
+        resultData.temp = Math.round(inputData.main.temp - conversionFactors.temp);
+        resultData.feelsLike = Math.round(inputData.main.feels_like - conversionFactors.temp);
+        resultData.tempMin = Math.round(inputData.main.temp_min - conversionFactors.temp);
+        resultData.tempMax = Math.round(inputData.main.temp_max - conversionFactors.temp);
+        resultData.pressure = Math.round(inputData.main.pressure * conversionFactors.pressure);
         resultData.humidity = inputData.main.humidity;
         resultData.clouds = inputData.clouds.all;
-        resultData.visibility = inputData.visibility * 0.001;
+        resultData.visibility = inputData.visibility * conversionFactors.visibility;
         resultData.sunrise = formatDate(inputData.sys.sunrise + inputData.timezone).currentTime;
         resultData.sunset = formatDate(inputData.sys.sunset + inputData.timezone).currentTime;
-        resultData.weather = inputData.weather[0];
-        resultData.wind = inputData.wind;
-
-        const str = resultData.weather.description;
-        resultData.weather.description = str.charAt(0).toUpperCase() + str.slice(1);
-        resultData.backImg = backgroundImages[resultData.weather.icon];
-        resultData.weather.icon = weatherIcons[resultData.weather.icon];
-        resultData.wind.speed = Math.round(inputData.wind.speed * 3.6);
+        resultData.weather.id = inputData.weather[0].id;
+        resultData.weather.main = inputData.weather[0].main;
+        resultData.weather.description =
+            inputData.weather[0].description.charAt(0).toUpperCase() +
+            inputData.weather[0].description.slice(1);
+        resultData.weather.icon = weatherIcons[inputData.weather[0].icon];
+        resultData.wind.deg = inputData.wind.deg;
+        resultData.wind.gust = inputData.wind.gust;
+        resultData.wind.speed = Math.round(inputData.wind.speed * conversionFactors.speed);
+        resultData.backImg = backgroundImages[inputData.weather[0].icon];
     }
 
     return resultData;

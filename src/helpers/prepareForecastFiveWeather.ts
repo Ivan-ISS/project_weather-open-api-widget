@@ -1,5 +1,5 @@
 import { IForecastFiveWRes, IForecastFiveW } from '../types/entityTypes';
-import { weatherIcons } from '../data';
+import { weatherIcons, conversionFactors } from '../data';
 
 function prepareForecastFiveWeather(inputData: IForecastFiveWRes | null): IForecastFiveW[] {
     const resultData: { [date: string]: IForecastFiveW } = {};
@@ -18,11 +18,11 @@ function prepareForecastFiveWeather(inputData: IForecastFiveWRes | null): IForec
 
             resultData[date].hours.push({
                 time: time,
-                temp: Math.round(item.main.temp - 273),
-                feelsLike: Math.round(item.main.feels_like - 273),
-                tempMin: Math.round(item.main.temp_min - 273),
-                tempMax: Math.round(item.main.temp_max - 273),
-                pressure: Math.round(item.main.pressure * 0.7500637554192),
+                temp: Math.round(item.main.temp - conversionFactors.temp),
+                feelsLike: Math.round(item.main.feels_like - conversionFactors.temp),
+                tempMin: Math.round(item.main.temp_min - conversionFactors.temp),
+                tempMax: Math.round(item.main.temp_max - conversionFactors.temp),
+                pressure: Math.round(item.main.pressure * conversionFactors.pressure),
                 humidity: item.main.humidity,
                 clouds: item.clouds.all,
                 visibility: item.visibility,
@@ -35,7 +35,7 @@ function prepareForecastFiveWeather(inputData: IForecastFiveWRes | null): IForec
                     icon: weatherIcons[item.weather[0].icon],
                 },
                 wind: {
-                    speed: item.wind.speed * 3.6,
+                    speed: item.wind.speed * conversionFactors.speed,
                     deg: item.wind.deg,
                     gust: item.wind.gust,
                 },

@@ -154,6 +154,14 @@ export const indicatorIcons = [
     { name: 'Sunset', text: '' },
 ];
 
+// Коэффициенты перевода величин
+export const conversionFactors = {
+    temp: 273,
+    pressure: 0.7500637554192,
+    visibility: 0.001,
+    speed: 3.6,
+};
+
 // Страны
 export const countries: { [key: string]: string } = {
     AU: 'Australia',
