@@ -1,6 +1,6 @@
 import styles from './input.module.scss';
 import { FC, useState } from 'react';
-import { SvgSelector as SearchIcon } from '../../Common/SvgSelector';
+import { SvgSelector } from '../../Common/SvgSelector';
 
 export interface IInputProps {
     placeholder: string;
@@ -30,8 +30,8 @@ const Input: FC<IInputProps> = ({ placeholder, iconName, setInputValue }): JSX.E
     return (
         <div className={styles.inputWrap}>
             {iconName ? (
-                <button className={styles.btnSearch} onClick={handleClickSearch}>
-                    <SearchIcon iconName={iconName} className={styles.search} />
+                <button className={styles.btnIcon} onClick={handleClickSearch}>
+                    <SvgSelector iconName={iconName} className={styles.search} />
                 </button>
             ) : null}
             <input

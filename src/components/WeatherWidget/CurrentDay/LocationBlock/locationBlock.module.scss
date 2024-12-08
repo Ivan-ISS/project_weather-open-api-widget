@@ -1,0 +1,20 @@
+@import "/src/styles/_colors";
+@import "/src/styles/_variables";
+
+.locationBlock {
+    width: fit-content;
+    padding: 8px 16px;
+    background: $baseBlueLight;
+    border-radius: $borderRadiusMedium;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    svg {
+        path {
+            fill: var(#{--textColorDefault});
+            transition: $transitionSwitch;
+        }
+    }
+}

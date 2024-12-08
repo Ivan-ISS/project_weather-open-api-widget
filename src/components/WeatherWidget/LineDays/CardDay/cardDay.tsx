@@ -13,9 +13,6 @@ export interface ICardDayProps {
 const CardDay: FC<ICardDayProps> = ({ date, hourInfo }): JSX.Element => {
     const { dayOfWeek, dayOfMonth, month } = rewriteDate(date);
 
-    /* const dayInfo = hourInfo.find((item) => item.time === '00:00:00' || !item.time);
-    const nightInfo = hourInfo.find((item) => item.time === '00:00:00' || !item.time); */
-
     let dayInfo: IHourInfo | undefined;
     let nightInfo: IHourInfo | undefined;
 
@@ -43,7 +40,7 @@ const CardDay: FC<ICardDayProps> = ({ date, hourInfo }): JSX.Element => {
                     <div className={styles.day}>{dayOfWeek}</div>
                     <div className={styles.date}>{`${dayOfMonth} ${month}`}</div>
                 </div>
-                <div className={styles.wrapIcon}>
+                <div className={styles.iconWrap}>
                     <Icon className={styles.icon} iconName={weather.icon} />
                 </div>
                 <div className={styles.temp}>

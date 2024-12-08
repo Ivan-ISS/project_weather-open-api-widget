@@ -1,0 +1,23 @@
+@import "/src/styles/_colors";
+@import "/src/styles/_variables";
+
+.dateBlock {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+
+    .dayWeek,
+    .currentTime {
+        font-size: $fontSizeLargeDesktop;
+    }
+
+    .day {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .currentDate {
+            color: $baseGrayLight1;
+        }
+    }
+}

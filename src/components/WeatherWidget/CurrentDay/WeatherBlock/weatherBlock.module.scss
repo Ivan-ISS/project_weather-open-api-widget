@@ -1,0 +1,35 @@
+@import "/src/styles/_colors";
+@import "/src/styles/_variables";
+
+.weatherBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+    svg {
+        width: 125px;
+        height: 125px;
+        min-width: 90px;
+        min-height: 90px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        text-align: right;
+
+        .temp {
+
+            .dayTemp {
+                font-size: $fontSizeLargeDesktop;
+            }
+    
+            .nightTemp {
+                color: $baseGrayLight1;
+            }
+        }
+    }
+}
