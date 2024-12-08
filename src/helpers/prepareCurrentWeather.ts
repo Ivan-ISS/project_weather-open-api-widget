@@ -8,8 +8,13 @@ import {
 } from '../data';
 import { formatDate } from './formatDate';
 
-function prepareCurrentWeather(inputData: ICurrentWRes | null): ICurrentW {
+function prepareCurrentWeather(inputData: ICurrentWRes | string | null): ICurrentW {
     const resultData: ICurrentW = { ...initialCurrentWeather };
+
+    if (typeof inputData === 'string') {
+        initialCurrentWeather.error = inputData;
+        return initialCurrentWeather;
+    }
 
     if (inputData) {
         resultData.dt = formatDate(Date.now() * 0.001 + inputData.timezone);
@@ -25,7 +30,7 @@ function prepareCurrentWeather(inputData: ICurrentWRes | null): ICurrentW {
         resultData.pressure = Math.round(inputData.main.pressure * conversionFactors.pressure);
         resultData.humidity = inputData.main.humidity;
         resultData.clouds = inputData.clouds.all;
-        resultData.visibility = inputData.visibility * conversionFactors.visibility;
+        resultData.visibility = Math.round(inputData.visibility * conversionFactors.visibility);
         resultData.sunrise = formatDate(inputData.sys.sunrise + inputData.timezone).currentTime;
         resultData.sunset = formatDate(inputData.sys.sunset + inputData.timezone).currentTime;
         resultData.weather.id = inputData.weather[0].id;
@@ -38,6 +43,8 @@ function prepareCurrentWeather(inputData: ICurrentWRes | null): ICurrentW {
         resultData.wind.gust = inputData.wind.gust;
         resultData.wind.speed = Math.round(inputData.wind.speed * conversionFactors.speed);
         resultData.backImg = backgroundImages[inputData.weather[0].icon];
+
+        resultData.error = '';
     }
 
     return resultData;

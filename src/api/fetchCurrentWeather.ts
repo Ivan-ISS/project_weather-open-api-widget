@@ -15,8 +15,9 @@ async function fetchCurrentWeather(args: IFetchData) {
         );
 
         if (!response.ok) {
-            const error = await response.json();
+            const error = await response.json(); // Нужно типизировать ошибку и сделать обработку в FiveForecast аналогично и использовать ее показ в зависимости от error в current или error в forecast
             console.log('Ошибка ответа (статус не 200): ', error);
+            return error.message as string;
         }
 
         const data: ICurrentWRes = await response.json();
@@ -26,7 +27,7 @@ async function fetchCurrentWeather(args: IFetchData) {
         return data;
     } catch (error) {
         console.log('Сервер не отвечает: ', error);
-        return null;
+        return 'Oops, something went wrong! Try again';
     }
 }
 

@@ -140,6 +140,8 @@ export interface ICurrentW {
         gust: number;
     };
     backImg: string;
+
+    error: string;
 }
 
 export interface IHourInfo {

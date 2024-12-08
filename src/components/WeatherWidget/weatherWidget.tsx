@@ -21,6 +21,7 @@ import { PrimaryButton } from '../Common/Buttons/PrimaryButton';
 import { CurrentDay } from './CurrentDay';
 import { CurrentDayDetails } from './CurrentDayDetails';
 import { LineDays } from './LineDays';
+import { Modal } from '../Common/Modal';
 
 const WeatherWidget: FC = () => {
     const [theme, setTheme] = useState<string>(themeName.light);
@@ -70,7 +71,7 @@ const WeatherWidget: FC = () => {
     useEffect(() => {
         if (currentWeather) console.log('current: ', currentWeather);
         if (forecastFiveWeather) console.log('forecast: ', forecastFiveWeather);
-    }, [currentWeather, forecastFiveWeather]);
+    }, [currentWeather, forecastFiveWeather, city]);
 
     useEffect(() => {
         setThemeStyleVar(theme);
@@ -99,6 +100,9 @@ const WeatherWidget: FC = () => {
                     <PrimaryButton onClick={hendleClickLocation} text={'Current location'} />
                 </div>
             </div>
+            {currentWeather.error && (
+                <Modal insert={<div className={styles.error}>{currentWeather.error}</div>} />
+            )}
             <div className={styles.forecast}>
                 <div className={styles.current}>
                     <CurrentDay currentWeather={currentWeather} />

@@ -45,6 +45,7 @@ export const initialCurrentWeather: ICurrentW = {
         gust: 0,
     },
     backImg: 'images/jpeg/skyDay.jpg',
+    error: '',
 };
 
 // Пустой объект погоды на пять суток

@@ -7,6 +7,7 @@ $textForCommonBlack: $baseBlack;
 
 // Белые оттенки
 $baseWhite: #fff;
+$backgroundForCommonWhite: $baseWhite;
 $textForCommonWhite: $baseWhite;
 $fillForIconWhite: $baseWhite;
 
@@ -20,6 +21,7 @@ $textForInsertGray: $baseGrayLight;
 // Синие оттенки
 $baseBlue: #4793ff;
 $textForCommonBlue: $baseBlue;
+$backgroundForCommonBlue: $baseBlue;
 $backgroundForCommonBlueLight: rgba($baseBlue, 0.2);
 $backgroundForBtnBlueLight: rgba($baseBlue, 0.4);
 

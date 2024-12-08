@@ -1,0 +1,23 @@
+@import "/src/styles/_colors";
+@import "/src/styles/_variables";
+
+.modal {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100%;
+    max-width: 1050px;
+    max-height: fit-content;
+    padding: 16px;
+    box-shadow: 0 16px 40px 0 rgba(23, 32, 41, 0.32);
+    border-radius: $borderRadiusLarge;
+    z-index: 1000;
+    display: flex;
+
+    display: flex;
+    flex-direction: column;
+    background: $backgroundForCommonWhite;
+    transition: $transitionSwitch;
+}
