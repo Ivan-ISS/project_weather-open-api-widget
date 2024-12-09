@@ -17,6 +17,7 @@ async function fetchForecastFiveWeather(args: IFetchData) {
         if (!response.ok) {
             const error = await response.json();
             console.log('Ошибка ответа (статус не 200): ', error);
+            return error.message as string;
         }
 
         const data: IForecastFiveWRes = await response.json();
@@ -26,7 +27,7 @@ async function fetchForecastFiveWeather(args: IFetchData) {
         return data;
     } catch (error) {
         console.log('Сервер не отвечает: ', error);
-        return null;
+        return 'Oops, something went wrong! Try again';
     }
 }
 

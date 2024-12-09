@@ -100,8 +100,14 @@ const WeatherWidget: FC = () => {
                     <PrimaryButton onClick={hendleClickLocation} text={'Current location'} />
                 </div>
             </div>
-            {currentWeather.error && (
-                <Modal insert={<div className={styles.error}>{currentWeather.error}</div>} />
+            {(currentWeather.error || forecastFiveWeather[0].error) && (
+                <Modal
+                    insert={
+                        <div className={styles.error}>
+                            {currentWeather.error || forecastFiveWeather[0].error}
+                        </div>
+                    }
+                />
             )}
             <div className={styles.forecast}>
                 <div className={styles.current}>

@@ -75,6 +75,8 @@ export const initialForecastFiveWeather: IForecastFiveW[] = Array.from({ length:
         pop: 0,
         pod: 'n',
     })),
+
+    error: '',
 }));
 
 // Время для дня и ночи

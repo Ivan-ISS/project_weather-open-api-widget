@@ -1,8 +1,15 @@
 import { IForecastFiveWRes, IForecastFiveW } from '../types/entityTypes';
 import { weatherIcons, conversionFactors, initialForecastFiveWeather } from '../data';
 
-function prepareForecastFiveWeather(inputData: IForecastFiveWRes | null): IForecastFiveW[] {
+function prepareForecastFiveWeather(
+    inputData: IForecastFiveWRes | string | null
+): IForecastFiveW[] {
     const resultData: { [date: string]: IForecastFiveW } = {};
+
+    if (typeof inputData === 'string') {
+        initialForecastFiveWeather[0].error = inputData;
+        return initialForecastFiveWeather;
+    }
 
     if (inputData) {
         inputData.list.forEach((item) => {
@@ -13,6 +20,8 @@ function prepareForecastFiveWeather(inputData: IForecastFiveWRes | null): IForec
                 resultData[date] = {
                     date: date,
                     hours: [],
+
+                    error: '',
                 };
             }
 

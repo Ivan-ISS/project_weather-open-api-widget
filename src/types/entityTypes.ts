@@ -172,4 +172,6 @@ export interface IHourInfo {
 export interface IForecastFiveW {
     date: string;
     hours: IHourInfo[];
+
+    error: string;
 }
