@@ -39,11 +39,17 @@ $cardBackgroundLight: rgb(#4793ff, 0.2);
 $switchBackgroundDark: #2e3035;
 $switchBackgroundLight: #939cb0;
 
+$errorBackgroundDark: #7a3939;
+$errorBackgroundLight: #fff;
+
 $shadowDark: 10px 10px 4px 0 #0d1117;
 $shadowLight: 10px 10px 4px 0 rgba(#0d1117, 0.5);
 
 $textColorDark: #fff;
 $textColorLight: #0d1117;
+
+$textErrorDark: #fff;
+$textErrorLight: #e71e1e;
 
 :root {
     // bodyBackground
@@ -66,6 +72,11 @@ $textColorLight: #0d1117;
     --switchBackgroundLight: #{$switchBackgroundLight};
     --switchBackgroundDefault: var(#{--switchBackgroundLight});
 
+    // errorBackground
+    --errorBackgroundDark: #{$errorBackgroundDark};
+    --errorBackgroundLight: #{$errorBackgroundLight};
+    --errorBackgroundDefault: var(#{--errorBackgroundLight});
+
     // shadow
     --shadowDark: #{$shadowDark};
     --shadowLight: #{$shadowLight};
@@ -75,4 +86,9 @@ $textColorLight: #0d1117;
     --textColorDark: #{$textColorDark};
     --textColorLight: #{$textColorLight};
     --textColorDefault: var(#{--textColorLight});
+
+    // textError
+    --textErrorDark: #{$textErrorDark};
+    --textErrorLight: #{$textErrorLight};
+    --textErrorDefault: var(#{--textErrorLight});
 }

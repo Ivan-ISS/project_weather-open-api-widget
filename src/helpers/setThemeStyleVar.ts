@@ -5,8 +5,10 @@ function setThemeStyleVar(theme: string) {
         'componentBackground',
         'cardBackground',
         'switchBackground',
+        'errorBackground',
         'shadow',
         'textColor',
+        'textError',
     ];
 
     components.forEach((component) => {
