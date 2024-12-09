@@ -14,3 +14,10 @@
     display: flex;
     gap: 20px;
 }
+
+@media (max-width: 600px) {
+
+    .lineDays {
+        flex-wrap: wrap;
+    }
+}

@@ -35,3 +35,11 @@
         color: $textForCommonGray;
     }
 }
+
+@media (max-width: 475px) {
+
+    .cardDetail {
+        grid-template-columns: max-content 70px 1fr;
+        gap: 15px;
+    }
+}

@@ -18,3 +18,11 @@
     flex-direction: column;
     gap: 18px;
 }
+
+@media (max-width: 850px) {
+
+    .currentDay {
+        max-width: none;
+        font-size: $fontSizeMediumMobile;
+    }
+}

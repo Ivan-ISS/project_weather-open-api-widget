@@ -33,3 +33,20 @@
         }
     }
 }
+
+@media (max-width: 850px) {
+
+    .weatherBlock {
+        gap: 25px;
+        
+        .info {
+
+            .temp {
+
+                .dayTemp {
+                    font-size: $fontSizeLargeMobile;
+                }
+            }
+        }
+    }
+}

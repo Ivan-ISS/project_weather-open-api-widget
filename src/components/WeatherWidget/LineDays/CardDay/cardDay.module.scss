@@ -36,3 +36,10 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+
+    .cardDay {
+        flex-wrap: wrap;
+    }
+}
