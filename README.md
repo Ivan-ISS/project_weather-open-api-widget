@@ -1,4 +1,4 @@
-# project_weather-widget / Виджет с прогнозом погоды
+# project_weather-open-api-widget / Виджет с прогнозом погоды
 
 **Ссылка для просмотра проекта:** ***https://project-weather-open-api-widget.vercel.app/***
 
@@ -39,11 +39,11 @@ __Интерфейс приложения__ представлен элемен�
 - кнопка *"Геолокация"* - для получения текущей геолокации пользователя и выполнения запроса о погоде по текущей геолокации.<br>
 
 ## Технологии:
+<img src="https://img.shields.io/badge/-TypeScript-blue?logo=typescript&logoColor=white" alt="TS"/>&nbsp;
+<img src="https://img.shields.io/badge/-REACT-000000?logo=React&logoColor=#00fff" alt="REACT"/>&nbsp;
 <img src="https://img.shields.io/badge/HTML5-red?logo=html5&logoColor=white" alt="HTML5"/>&nbsp;
 <img src="https://img.shields.io/badge/CSS3-blue?logo=css3&logoColor=white" alt="CSS3"/>&nbsp;
 <img src="https://img.shields.io/badge/-Sass-DB7093?logo=sass&logoColor=white" alt="SASS"/>&nbsp;
-<img src="https://img.shields.io/badge/-JavaScript-f0db4f?logo=javaScript&logoColor=black" alt="JS"/>&nbsp;
-<img src="https://img.shields.io/badge/-React-000000?logo=React&logoColor=#00fff" alt="React"/>&nbsp;
 
 ## В проекте реализованы функциональные требования:
 &nbsp; :heavy_check_mark: Можно вводить вручную местоположение в строку поиска<br>
