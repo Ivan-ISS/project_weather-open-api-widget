@@ -1515,7 +1515,7 @@ function SvgSelector({ iconName, ...props }: ISvgGenComponentsProps) {
                     </defs>
                 </svg>
             );
-        case 'loactionTarget':
+        case 'locationTarget':
             return (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

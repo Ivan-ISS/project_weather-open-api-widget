@@ -31,7 +31,7 @@ const Input: FC<IInputProps> = ({ placeholder, iconName, setInputValue }): JSX.E
         <div className={styles.inputWrap}>
             {iconName ? (
                 <button className={styles.btnIcon} onClick={handleClickSearch}>
-                    <SvgSelector iconName={iconName} className={styles.search} />
+                    <SvgSelector iconName={iconName} className={styles.icon} />
                 </button>
             ) : null}
             <input

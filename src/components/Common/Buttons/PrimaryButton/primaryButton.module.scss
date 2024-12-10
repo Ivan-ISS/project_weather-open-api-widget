@@ -4,10 +4,14 @@
 .button {
     cursor: pointer;
     width: 100%;
-    padding: 16px;
+    padding: 8px;
     border: none;
     font-family: inherit;
     font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
     border-radius: $borderRadiusLarge;
     box-shadow: $boxShadowSmall;
     color: $textForInsertGray;
@@ -16,10 +20,17 @@
     transition: $transitionSwitch;
 
     &:hover {
-        color: $textForCommonBlue;
+        color: $textForCommonBlack;
+        background: $backgroundForCommonGreen;
     }
 
     &:active {
-        background: $backgroundForBtnBlueLight;
+        color: $textForCommonBlack;
+        background: rgba($backgroundForCommonGreen, 0.6);
+    }
+    
+    svg {
+        width: 28px;
+        height: 28px;
     }
 }
