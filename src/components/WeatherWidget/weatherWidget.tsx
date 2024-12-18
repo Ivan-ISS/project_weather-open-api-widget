@@ -66,8 +66,6 @@ const WeatherWidget: FC = () => {
         }
     }, [latitude, longitude, geoStatus]);
 
-    // console.log('render');
-
     useEffect(() => {
         if (currentWeather) console.log('current: ', currentWeather);
         if (forecastFiveWeather) console.log('forecast: ', forecastFiveWeather);
